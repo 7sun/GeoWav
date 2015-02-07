@@ -35,6 +35,10 @@ gem 'httparty'
 
 gem 'figaro'
 
+gem 'soundcloud'
+
+gem 'bourbon'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

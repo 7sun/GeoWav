@@ -13,3 +13,5 @@
   twitter_consumer_secret: 'Ylk13Q0S4gaeCpFC5rHwSS8kIn1ecjfIWlN7cRUH7w6dMegkDY'
   twitter_access_token: '2915323921-qC6MD6nHisraPR7fYsCcvRX1sEGIy0CMWeyKiDM'
   twitter_access_token_secret: 'BowOe3pzUZv7eX7WBGloBDCipo8sgNwEuOtOIcXrA9aPb'
+
+  soundcloud_client_id: "15356ad1b6d2b2a0b14b715797d57550"
