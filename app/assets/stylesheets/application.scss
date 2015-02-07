@@ -34,9 +34,11 @@ body {
 }
 
 .dropdown-menu {
-  // margin-right: 14px;
-  // max-height: ;
+  margin-right: 14px;
+  max-height: 150px;
   overflow-y: scroll;
+  // opacity: 0.8;
+  // direction:rtl;
 }
 
 // .btn-circle {

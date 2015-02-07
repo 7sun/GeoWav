@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Twitterapi</title>
+  <script src="http://www.webglearth.com/v2/api.js"></script>
+  <title>Geomancy</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body onload="initialize()">
+
+<div id="earth_div"></div>
+
 
 <div class="container">
 <nav class="navbar navbar-default">
@@ -84,7 +88,7 @@
 </nav>
 
 
-	<%= yield %>
+  <%= yield %>
 
 </div>
 
