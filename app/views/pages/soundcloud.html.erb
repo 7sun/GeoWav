@@ -6,37 +6,96 @@
     <div class="title"></div>
     <div class="artist"></div>
     <div class="cover"></div>
+    <div class="volume"></div>
+    <div class="tracker"></div>
     <div class="controls">
         <div class="play icon-play3"></div>
         <div class="pause icon-pause2"></div>
         <div class="rew icon-backward2"></div>
         <div class="fwd icon-forward3"></div>
-        <div id="playlist-toggle" class="icon-menu4" onclick="togglePlaylist()"></div>
-    </div>
-    <div class="volume"></div>
-    <div class="tracker"></div>
-</div>
 
-<ul id="playlist" class="show">
-    <li audiourl="01.mp3" cover="cover1.jpg" artist="Artist 1">ODEZSA - Find Your Friends</li>
-    <li audiourl="02.mp3" cover="cover2.jpg" artist="Artist 2">02.mp3</li>
-    <li audiourl="03.mp3" cover="cover3.jpg" artist="Artist 3">03.mp3</li>
-    <li audiourl="04.mp3" cover="cover4.jpg" artist="Artist 4">04.mp3</li>
-    <li audiourl="05.mp3" cover="cover5.jpg" artist="Artist 5">05.mp3</li>
-    <li audiourl="06.mp3" cover="cover6.jpg" artist="Artist 6">06.mp3</li>
-    <li audiourl="07.mp3" cover="cover7.jpg" artist="Artist 7">07.mp3</li>
-    <li audiourl="08.mp3" cover="cover7.jpg" artist="Artist 7">08.mp3</li>
-    <li audiourl="09.mp3" cover="cover7.jpg" artist="Artist 7">09.mp3</li>
-    <li audiourl="10.mp3" cover="cover7.jpg" artist="Artist 7">10.mp3</li>
-    <li audiourl="11.mp3" cover="cover7.jpg" artist="Artist 7">11.mp3</li>
-    <li audiourl="12.mp3" cover="cover7.jpg" artist="Artist 7">12.mp3</li>
-    <li audiourl="13.mp3" cover="cover7.jpg" artist="Artist 7">13.mp3</li>
-    <li audiourl="14.mp3" cover="cover7.jpg" artist="Artist 7">14.mp3</li>
-    <li audiourl="15.mp3" cover="cover7.jpg" artist="Artist 7">15.mp3</li>
-    <li audiourl="16.mp3" cover="cover7.jpg" artist="Artist 7">16.mp3</li>
-    <li audiourl="17.mp3" cover="cover7.jpg" artist="Artist 7">17.mp3</li>
-    <li audiourl="18.mp3" cover="cover7.jpg" artist="Artist 7">18.mp3</li>
-    <li audiourl="19.mp3" cover="cover7.jpg" artist="Artist 7">19.mp3</li>
-    <li audiourl="20.mp3" cover="cover7.jpg" artist="Artist 7">20.mp3</li>
+
+        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+            <div class="icon-menu4 panel-group" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                <div id="collapseListGroup1" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="collapseListGroupHeading1" aria-expanded="true">
+                </div>
+            </div>
+        </div>
+        <div id="collapseListGroup1" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="collapseListGroupHeading1" aria-expanded="true">
+            <ul id="playlist" class="list-group">
+                <li class="list-group-item" audiourl="01.mp3" cover="cover1.jpg" artist="Artist 1">ODEZSA - Find Your Friends</li>
+                <li class="list-group-item" audiourl="02.mp3" cover="cover2.jpg" artist="Artist 2">02.mp3</li>
+                <li class="list-group-item" audiourl="03.mp3" cover="cover3.jpg" artist="Artist 3">03.mp3</li>
+                <li class="list-group-item" audiourl="04.mp3" cover="cover4.jpg" artist="Artist 4">04.mp3</li>
+                <li class="list-group-item" audiourl="05.mp3" cover="cover5.jpg" artist="Artist 5">05.mp3</li>
+                <li class="list-group-item" audiourl="06.mp3" cover="cover6.jpg" artist="Artist 6">06.mp3</li>
+                <li class="list-group-item" audiourl="07.mp3" cover="cover7.jpg" artist="Artist 7">07.mp3</li>
+                <li class="list-group-item" audiourl="08.mp3" cover="cover7.jpg" artist="Artist 7">08.mp3</li>
+                <li class="list-group-item" audiourl="09.mp3" cover="cover7.jpg" artist="Artist 7">09.mp3</li>
+                <li class="list-group-item" audiourl="10.mp3" cover="cover7.jpg" artist="Artist 7">10.mp3</li>
+                <li class="list-group-item" audiourl="11.mp3" cover="cover7.jpg" artist="Artist 7">11.mp3</li>
+                <li class="list-group-item" audiourl="12.mp3" cover="cover7.jpg" artist="Artist 7">12.mp3</li>
+                <li class="list-group-item" audiourl="13.mp3" cover="cover7.jpg" artist="Artist 7">13.mp3</li>
+                <li class="list-group-item" audiourl="14.mp3" cover="cover7.jpg" artist="Artist 7">14.mp3</li>
+                <li class="list-group-item" audiourl="15.mp3" cover="cover7.jpg" artist="Artist 7">15.mp3</li>
+                <li class="list-group-item" audiourl="16.mp3" cover="cover7.jpg" artist="Artist 7">16.mp3</li>
+                <li class="list-group-item" audiourl="17.mp3" cover="cover7.jpg" artist="Artist 7">17.mp3</li>
+                <li class="list-group-item" audiourl="18.mp3" cover="cover7.jpg" artist="Artist 7">18.mp3</li>
+                <li class="list-group-item" audiourl="19.mp3" cover="cover7.jpg" artist="Artist 7">19.mp3</li>
+                <li class="list-group-item" audiourl="20.mp3" cover="cover7.jpg" artist="Artist 7">20.mp3</li>
+            </ul>
+        </div>
+
+
+<!-- <div id="collapseListGroup1" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="collapseListGroupHeading1" aria-expanded="true">
+<ul id="playlist" class="list-group">
+    <li class="list-group-item" audiourl="01.mp3" cover="cover1.jpg" artist="Artist 1">ODEZSA - Find Your Friends</li>
+    <li class="list-group-item" audiourl="02.mp3" cover="cover2.jpg" artist="Artist 2">02.mp3</li>
+    <li class="list-group-item" audiourl="03.mp3" cover="cover3.jpg" artist="Artist 3">03.mp3</li>
+    <li class="list-group-item" audiourl="04.mp3" cover="cover4.jpg" artist="Artist 4">04.mp3</li>
+    <li class="list-group-item" audiourl="05.mp3" cover="cover5.jpg" artist="Artist 5">05.mp3</li>
+    <li class="list-group-item" audiourl="06.mp3" cover="cover6.jpg" artist="Artist 6">06.mp3</li>
+    <li class="list-group-item" audiourl="07.mp3" cover="cover7.jpg" artist="Artist 7">07.mp3</li>
+    <li class="list-group-item" audiourl="08.mp3" cover="cover7.jpg" artist="Artist 7">08.mp3</li>
+    <li class="list-group-item" audiourl="09.mp3" cover="cover7.jpg" artist="Artist 7">09.mp3</li>
+    <li class="list-group-item" audiourl="10.mp3" cover="cover7.jpg" artist="Artist 7">10.mp3</li>
+    <li class="list-group-item" audiourl="11.mp3" cover="cover7.jpg" artist="Artist 7">11.mp3</li>
+    <li class="list-group-item" audiourl="12.mp3" cover="cover7.jpg" artist="Artist 7">12.mp3</li>
+    <li class="list-group-item" audiourl="13.mp3" cover="cover7.jpg" artist="Artist 7">13.mp3</li>
+    <li class="list-group-item" audiourl="14.mp3" cover="cover7.jpg" artist="Artist 7">14.mp3</li>
+    <li class="list-group-item" audiourl="15.mp3" cover="cover7.jpg" artist="Artist 7">15.mp3</li>
+    <li class="list-group-item" audiourl="16.mp3" cover="cover7.jpg" artist="Artist 7">16.mp3</li>
+    <li class="list-group-item" audiourl="17.mp3" cover="cover7.jpg" artist="Artist 7">17.mp3</li>
+    <li class="list-group-item" audiourl="18.mp3" cover="cover7.jpg" artist="Artist 7">18.mp3</li>
+    <li class="list-group-item" audiourl="19.mp3" cover="cover7.jpg" artist="Artist 7">19.mp3</li>
+    <li class="list-group-item" audiourl="20.mp3" cover="cover7.jpg" artist="Artist 7">20.mp3</li>
 </ul>
+</div> -->
+
+<!-- <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingOne">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          Collapsible Group Item #1
+        </a>
+      </h4>
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+
+        <div id="collapseListGroup1" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="collapseListGroupHeading1" aria-expanded="true">
+        <ul class="list-group">
+          <li class="list-group-item">Bootply</li>
+          <li class="list-group-item">One itmus ac facilin</li>
+          <li class="list-group-item">Second eros</li>
+        </ul>
+        <div class="panel-footer">Footer</div>
+      </div>
+
+
+      <div class="panel-body">
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+      </div>
+    </div>
+  </div> -->
 
