@@ -20,7 +20,7 @@ class SoundcloudController < ApplicationController
   # end
 
   def users
-    city = 'Perth'
+    city = 'Barcelona'
     @streams = []
     @search = SoundcloudSearch.add(city)
     @users = @search.result.sort! { |a, b| b['followers_count'] <=> a['followers_count'] }
