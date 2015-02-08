@@ -1,0 +1,27 @@
+<p>Los Angeles Users</p>
+<%= @search.updated_at %>
+
+<% @streams.each do |stream| %>
+<div class="sc-player">
+	<p><%= stream.user.username %></p>
+	<p><%= stream.title %></p>
+	<%= image_tag(stream.artwork_url) %>
+	<%= audio_tag("#{stream.stream_url}?client_id=#{ENV['soundcloud_client_id']}", controls: true) %>
+</div>
+<% end %>
+
+
+<table>
+	<thead>
+		<tr>
+			<td>Artist</td>
+		<tr>
+	</thead>
+	<tbody>
+			<% @users.each do |user| %>
+				<tr>
+					<td><%= user["city"] %> : <%= user["username"] %>: <%= user["followers_count"] %></td>
+				</tr>
+			<% end %>
+	</tbody>
+</table>
