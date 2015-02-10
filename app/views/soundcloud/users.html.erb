@@ -1,27 +1,30 @@
-<p>Los Angeles Users</p>
+<header>
+<h1>GLOBO-TRON 5000</h1>
+</header>
+<div class="player">
+    <div class="pl"></div>
+    <div class="title"></div>
+    <div class="artist"></div>
+    <div class="cover"></div>
+    <div class="volume"></div>
+    <div class="tracker"></div>
+    <div class="controls">
+        <div id="play" class="play icon-play3"></div>
+        <div class="pause icon-pause2"></div>
+        <div class="rew icon-backward2"></div>
+        <div class="fwd icon-forward3"></div>
+        <div class="icon-menu4"></div>
+    </div>
+    <ul id="playlist" class="list-group">
+    	<% @users.each do |user| %>
+					<li><%= user["city"] %> : <%= user["username"] %>: <%= user["followers_count"] %></li>
+			<% end %>
+    </ul>
+</div>
+
+
+
 <%= @search.updated_at %>
 
-<% @streams.each do |stream| %>
-<div class="sc-player">
-	<p><%= stream.user.username %></p>
-	<p><%= stream.title %></p>
-	<%= image_tag(stream.artwork_url) %>
-	<%= audio_tag("#{stream.stream_url}?client_id=#{ENV['soundcloud_client_id']}", controls: true) %>
-</div>
-<% end %>
-
-
-<table>
-	<thead>
-		<tr>
-			<td>Artist</td>
-		<tr>
-	</thead>
-	<tbody>
-			<% @users.each do |user| %>
-				<tr>
-					<td><%= user["city"] %> : <%= user["username"] %>: <%= user["followers_count"] %></td>
-				</tr>
-			<% end %>
-	</tbody>
-</table>
+<%= @test_track %>
+<iframe id="sc-widget" src=<%="http://api.soundcloud.com/tracks/33427584"%> width="100%" height="465" scrolling="no" frameborder="no"></iframe>
