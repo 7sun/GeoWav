@@ -1,5 +1,5 @@
 <header>
-<h1>GLOBO-TRON 5000</h1>
+<h1>GLOBO-TRON 5000 | <%= @search.updated_at %></h1>
 </header>
 <div class="player">
     <div class="pl"></div>
@@ -9,21 +9,27 @@
     <div class="volume"></div>
     <div class="tracker"></div>
     <div class="controls">
-        <div id="play" class="icon-play3" onclick="playTrack()"></div>
+        <div id="play" class="icon-play3" value=<%= stream.uri %> onclick="playTrack()"></div>
+        $('#play').val();
         <div class="pause icon-pause2" onclick="pauseTrack()"></div>
-        <div class="rew icon-backward2" onclick="prevTrack()"></div>
+        <div class="rew icon-backward2" onclick="loadTrack()"></div>
         <div class="fwd icon-forward3" onclick="nextTrack()"></div>
         <div class="icon-menu4"></div>
     </div>
     <ul id="playlist" class="list-group">
-    	<% @streams.each do |stream| %>
-					<li onclick=<%= "loadTrack(" + "'" + stream.uri + "'" + ")"%>><%= stream.user.username %> : <%= stream.title %></li>
-			<% end %>
+    	<% @streams.each_with_index do |stream, index| %>
+            <% if @streams[index+1] != nil %>
+                <p><% next_track = @streams[index+1].uri %></p>
+            <% end %>
+            <p><% prev_track = @streams[index-1].uri %></p>
+    		<li onclick=<%= "loadTrack(" + "'" + stream.uri + "'" + ")"%>><%= stream.user.username %> : <%= stream.title %></li>
+            <li onclick=<%= "getTrack(#{stream.uri.to_s}, #{next_track.to_s}, #{prev_track.to_s})" %>><%= stream.user.username %> : <%= stream.title %></li>
+            <li onclick="getTrack( <%= stream.uri, next_track, prev_track %> )"><%= stream.user.username %> : <%= stream.title %></li>
+		<% end %>
     </ul>
 </div>
 
-<%= @search.updated_at %>
 
-<iframe id="sc-widget" src=<%= "https://w.soundcloud.com/player/?url=#{@test_track}?client_id=#{ENV['soundcloud_client_id']}" %> width="100" height="100" scrolling="no" frameborder="no"></iframe>
+<iframe id="sc-widget" src=<%= "https://w.soundcloud.com/player/?url=#{@test_track}?client_id=#{ENV['soundcloud_client_id']}" %> width="300" height="200" scrolling="no" frameborder="no"></iframe>
 
 <%= javascript_include_tag 'sc-widget' %>

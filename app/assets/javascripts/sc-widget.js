@@ -1,10 +1,35 @@
 //= require sc-api
 
 
+
+
+
 var widgetIframe = document.getElementById('sc-widget'),
     widget       = SC.Widget(widgetIframe);
 
-var track = "http://api.soundcloud.com/tracks/33427584?client_id=15356ad1b6d2b2a0b14b715797d57550";
+var playlist = []
+
+function buildPlaylist(track){
+    playlist.push(track);
+}
+
+
+// var next_track = "";
+// var prev_track = "";
+
+// function getTrack(current, next, prev) {
+//     var current_track = "'" + current + "'";
+//     next_track = "'" + next + "'";
+//     prev_track = "'" + prev + "'";
+
+//     loadTrack(current_track);
+}
+
+function nextTrack(){
+    if (next_track != ""){
+        loadTrack(next_track);
+    }
+}
 
 function playTrack() {
     widget.play();
@@ -18,12 +43,10 @@ function prevTrack() {
 	widget.prev();
 }
 
-function nextTrack() {
-	widget.next();
-}
 
 function loadTrack(track) {
-	widget.load(track);
+
+	widget.load(track, { auto_play:true });
 }
 
   // (function(){

@@ -33,7 +33,6 @@ class SoundcloudController < ApplicationController
         @streams << @user_track.first
       end
     end
-
     @test_track = @streams.first.uri
   end
 
