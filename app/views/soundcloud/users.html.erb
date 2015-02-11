@@ -9,25 +9,21 @@
     <div class="volume"></div>
     <div class="tracker"></div>
     <div class="controls">
-        <div id="play" class="play icon-play3"></div>
-        <div class="pause icon-pause2"></div>
-        <div class="rew icon-backward2"></div>
-        <div class="fwd icon-forward3"></div>
+        <div id="play" class="icon-play3" onclick="playTrack()"></div>
+        <div class="pause icon-pause2" onclick="pauseTrack()"></div>
+        <div class="rew icon-backward2" onclick="prevTrack()"></div>
+        <div class="fwd icon-forward3" onclick="nextTrack()"></div>
         <div class="icon-menu4"></div>
     </div>
     <ul id="playlist" class="list-group">
-    	<% @users.each do |user| %>
-					<li><%= user["city"] %> : <%= user["username"] %>: <%= user["followers_count"] %></li>
+    	<% @streams.each do |stream| %>
+					<li onclick=<%= "loadTrack(" + "'" + stream.uri + "'" + ")"%>><%= stream.user.username %> : <%= stream.title %></li>
 			<% end %>
     </ul>
 </div>
 
-
-
 <%= @search.updated_at %>
 
-<%= @test_track %>
-<iframe id="sc-widget" src=<%="http://api.soundcloud.com/tracks/33427584"%> width="100%" height="465" scrolling="no" frameborder="no"></iframe>
-
+<iframe id="sc-widget" src=<%= "https://w.soundcloud.com/player/?url=#{@test_track}?client_id=#{ENV['soundcloud_client_id']}" %> width="100" height="100" scrolling="no" frameborder="no"></iframe>
 
 <%= javascript_include_tag 'sc-widget' %>

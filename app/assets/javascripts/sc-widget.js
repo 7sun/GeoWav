@@ -6,23 +6,23 @@ var widgetIframe = document.getElementById('sc-widget'),
 
 var track = "http://api.soundcloud.com/tracks/33427584?client_id=15356ad1b6d2b2a0b14b715797d57550";
 
-function playSound() {
+function playTrack() {
     widget.play();
 }
 
-function pauseSound() {
+function pauseTrack() {
 	widget.pause();
 }
 
-function prevSound() {
+function prevTrack() {
 	widget.prev();
 }
 
-function nextSound() {
+function nextTrack() {
 	widget.next();
 }
 
-function loadSound(track) {
+function loadTrack(track) {
 	widget.load(track);
 }
 
