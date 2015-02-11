@@ -37,6 +37,11 @@ GEM
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
     addressable (2.3.6)
+    angular-rails-templates (0.1.3)
+      railties (>= 3.1)
+      sprockets
+      tilt
+    angularjs-rails (1.3.10)
     arel (6.0.0)
     autoprefixer-rails (5.0.0.1)
       execjs
@@ -87,9 +92,6 @@ GEM
       json (~> 1.8)
       multi_xml (>= 0.5.2)
     i18n (0.7.0)
-    jbuilder (2.2.6)
-      activesupport (>= 3.0.0, < 5)
-      multi_json (~> 1.2)
     jquery-rails (4.0.3)
       rails-dom-testing (~> 1.0)
       railties (>= 4.2.0)
@@ -176,8 +178,6 @@ GEM
     thor (0.19.1)
     thread_safe (0.3.4)
     tilt (1.4.1)
-    turbolinks (2.5.3)
-      coffee-rails
     twitter (5.13.0)
       addressable (~> 2.3)
       buftok (~> 0.2.0)
@@ -204,13 +204,14 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  angular-rails-templates
+  angularjs-rails
   bootstrap-sass (~> 3.3.3)
   bourbon
   byebug
   coffee-rails (~> 4.1.0)
   figaro
   httparty
-  jbuilder (~> 2.0)
   jquery-rails
   pg
   pry-rails
@@ -219,7 +220,6 @@ DEPENDENCIES
   sdoc (~> 0.4.0)
   soundcloud
   spring
-  turbolinks
   twitter
   uglifier (>= 1.3.0)
   web-console (~> 2.0)
