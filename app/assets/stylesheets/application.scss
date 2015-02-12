@@ -21,11 +21,16 @@ body {
 }
 
 .twitter-feed {
+
   border-radius: 5px;
-  padding: 10px 10px 5px 10px;
+  padding: 10px 0px 5px 20px;
   width: 320px;
   margin-bottom: 30px;
   font-family: "Helvetica Neue", Roboto, "Segoe UI", Calibri, sans-serif;
+  unicode-bidi: bidi-override;
+  max-height: 100vh;
+  overflow-y: scroll;
+  direction: rtl; 
 }
 
 // move bird to the left
@@ -34,60 +39,13 @@ body {
 }
 
 .dropdown-menu {
-  margin-right: 14px;
-  max-height: 150px;
-  overflow-y: scroll;
+  // margin-right: 14px;
+  max-height: 100vh;
+  // overflow-y: scroll;
   // opacity: 0.8;
-  // direction:rtl;
+  direction: ltr;
 }
 
-// .btn-circle {
-//   width: 50px;
-//   height: 50px;
-//   text-align: center;
-//   padding: 6px 0;
-//   font-size: 12px;
-//   line-height: 1.42;
-//   border-radius: 30px;
-// }
-
-// .twitter-bird {
-//   padding-top: 3px;
-//   padding-left: 2px;
-// }
-
-
-
-// blockquote.twitter-tweet {
-//   display: inline-block;
-//   font-family: "Helvetica Neue", Roboto, "Segoe UI", Calibri, sans-serif;
-//   font-size: 12px;
-//   font-weight: bold;
-//   line-height: 16px;
-//   border-color: #eee #ddd #bbb;
-//   border-radius: 5px;
-//   border-style: solid;
-//   border-width: 1px;
-//   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
-//   margin: 10px 5px;
-//   padding: 0 16px 16px 16px;
-//   max-width: 468px;
-// }
- 
-// blockquote.twitter-tweet p {
-//   font-size: 16px;
-//   font-weight: normal;
-//   line-height: 20px;
-// }
- 
-// blockquote.twitter-tweet a {
-//   color: inherit;
-//   font-weight: normal;
-//   text-decoration: none;
-//   outline: 0 none;
-// }
- 
-// blockquote.twitter-tweet a:hover,
-// blockquote.twitter-tweet a:focus {
-//   text-decoration: underline;
-// }
+.media-left {
+  float: left !important;
+}
