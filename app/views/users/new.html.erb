@@ -1,0 +1,10 @@
+<h2>Signup!</h2>
+
+<%= form_for @user do |f| %>
+  <%= f.text_field :first_name, placeholder: 'First Name' %>
+  <%= f.text_field :last_name, placeholder: 'Last Name' %>
+  <%= f.text_field :email, placeholder: 'Email' %>
+  <%= f.password_field :password, placeholder: 'Password' %>
+  <%= f.password_field :password_confirmation, placeholder: 'Password Confirmation' %>
+  <%= f.submit "Enlighten Thyself" %>
+<% end %>
