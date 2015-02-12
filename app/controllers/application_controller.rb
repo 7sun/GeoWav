@@ -3,20 +3,15 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-   def index
-    # @search_results = $twitter_rest.search("#justintimberlake", geocode: "34.03093,-118.26664119999998,500mi", lang: "en").take(10)
-    @search = TwitterSearch.add("kanye")
-    @tweets = @search.result
-    # @users = $twitter_rest.user_search("Lebron James")
-    # @topics = ['obama','bieber']
-    #   $twitter_stream.filter(track: @topics.join(",")) do |object|
-    #     if object.is_a? (Twitter::Tweet)
-    #       puts object.text
-    #     end
-    #    end
-    end
+  def authorize
+    redirect_to login_path unless current_user
+  end
+>>>>>>> master
+
+  def current_user
+    @current_user ||= User.find(session[:user_id]) if session[:user_id]
+  end
+
+  helper_method :current_user
 
 end
-
-# get request with angular?
-# https://egghead.io/lessons/angularjs-http

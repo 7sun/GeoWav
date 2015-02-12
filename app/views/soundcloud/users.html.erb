@@ -1,0 +1,28 @@
+<header>
+<h1>GLOBO-TRON 5000 | <%= @search.updated_at %></h1>
+</header>
+<div id="player">
+    <div class="pl"></div>
+    <div class="title"></div>
+    <div class="artist"></div>
+    <div class="cover"></div>
+    <div class="volume"></div>
+    <div class="tracker"></div>
+    <div class="controls">
+        <div id="play" class="icon-play3" onclick="playTrack()"></div>
+        <div class="pause icon-pause2" onclick="pauseTrack()"></div>
+        <div class="rew icon-backward2" onclick="prevTrack()"></div>
+        <div class="fwd icon-forward3" onclick="nextTrack()"></div>
+        <div class="icon-menu4"></div>
+    </div>
+    <ul id="playlist" class="list-group">
+    	<% @streams.each_with_index do |stream, index| %>
+    		<li id=<%="track-#{index}"%> onclick=<%= "loadTrack(\"#{stream.uri}\",#{index})"%>><%= stream.user.username %> : <%= stream.title %></li>
+		<% end %>
+    </ul>
+</div>
+
+
+<iframe id="sc-widget" src=<%= "https://w.soundcloud.com/player/?url=#{@test_track}?client_id=#{ENV['soundcloud_client_id']}" %> width="300" height="200" scrolling="no" frameborder="no"></iframe>
+
+<%= javascript_include_tag 'sc-widget' %>

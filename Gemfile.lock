@@ -37,14 +37,23 @@ GEM
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
     addressable (2.3.6)
+    angular-rails-templates (0.1.3)
+      railties (>= 3.1)
+      sprockets
+      tilt
+    angularjs-rails (1.3.10)
     arel (6.0.0)
     autoprefixer-rails (5.0.0.1)
       execjs
+    bcrypt (3.1.9)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     bootstrap-sass (3.3.3)
       autoprefixer-rails (>= 5.0.0.1)
       sass (>= 3.2.19)
+    bourbon (4.1.1)
+      sass (~> 3.3)
+      thor
     buftok (0.2.0)
     builder (3.2.2)
     byebug (3.5.1)
@@ -62,16 +71,27 @@ GEM
     columnize (0.9.0)
     debug_inspector (0.0.2)
     debugger-linecache (1.2.0)
+    diff-lcs (1.2.5)
     equalizer (0.0.9)
     erubis (2.7.0)
     execjs (2.2.2)
+    factory_girl (4.5.0)
+      activesupport (>= 3.0.0)
+    factory_girl_rails (4.5.0)
+      factory_girl (~> 4.5.0)
+      railties (>= 3.0.0)
     faraday (0.9.1)
       multipart-post (>= 1.2, < 3)
     figaro (1.0.0)
       thor (~> 0.14)
     globalid (0.3.0)
       activesupport (>= 4.1.0)
+    hashie (2.1.2)
     hike (1.2.3)
+    httmultiparty (0.3.16)
+      httparty (>= 0.7.3)
+      mimemagic
+      multipart-post
     http (0.6.3)
       http_parser.rb (~> 0.6.0)
     http_parser.rb (0.6.0)
@@ -79,9 +99,6 @@ GEM
       json (~> 1.8)
       multi_xml (>= 0.5.2)
     i18n (0.7.0)
-    jbuilder (2.2.6)
-      activesupport (>= 3.0.0, < 5)
-      multi_json (~> 1.2)
     jquery-rails (4.0.3)
       rails-dom-testing (~> 1.0)
       railties (>= 4.2.0)
@@ -95,6 +112,7 @@ GEM
       thread_safe (~> 0.3, >= 0.3.1)
     method_source (0.8.2)
     mime-types (2.4.3)
+    mimemagic (0.2.1)
     mini_portile (0.6.2)
     minitest (5.5.1)
     multi_json (1.10.1)
@@ -139,6 +157,22 @@ GEM
       thor (>= 0.18.1, < 2.0)
     rake (10.4.2)
     rdoc (4.2.0)
+    rspec-core (3.1.7)
+      rspec-support (~> 3.1.0)
+    rspec-expectations (3.1.2)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.1.0)
+    rspec-mocks (3.1.3)
+      rspec-support (~> 3.1.0)
+    rspec-rails (3.1.0)
+      actionpack (>= 3.0)
+      activesupport (>= 3.0)
+      railties (>= 3.0)
+      rspec-core (~> 3.1.0)
+      rspec-expectations (~> 3.1.0)
+      rspec-mocks (~> 3.1.0)
+      rspec-support (~> 3.1.0)
+    rspec-support (3.1.2)
     sass (3.4.10)
     sass-rails (5.0.1)
       railties (>= 4.0.0, < 5.0)
@@ -151,6 +185,9 @@ GEM
       rdoc (~> 4.0)
     simple_oauth (0.3.1)
     slop (3.6.0)
+    soundcloud (0.3.2)
+      hashie (~> 2.0)
+      httmultiparty (~> 0.3.0)
     spring (1.2.0)
     sprockets (2.12.3)
       hike (~> 1.2)
@@ -164,8 +201,6 @@ GEM
     thor (0.19.1)
     thread_safe (0.3.4)
     tilt (1.4.1)
-    turbolinks (2.5.3)
-      coffee-rails
     twitter (5.13.0)
       addressable (~> 2.3)
       buftok (~> 0.2.0)
@@ -192,20 +227,25 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  angular-rails-templates
+  angularjs-rails
+  bcrypt (~> 3.1.7)
   bootstrap-sass (~> 3.3.3)
+  bourbon
   byebug
   coffee-rails (~> 4.1.0)
+  factory_girl_rails
   figaro
   httparty
-  jbuilder (~> 2.0)
   jquery-rails
   pg
   pry-rails
   rails (= 4.2.0)
+  rspec-rails
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
+  soundcloud
   spring
-  turbolinks
   twitter
   uglifier (>= 1.3.0)
   web-console (~> 2.0)

@@ -5,11 +5,11 @@ class TwitterSearch < ActiveRecord::Base
   def self.add(string)
     if search = TwitterSearch.find_by(query: string) 
       if search.updated_at < 10.minutes.ago 
-        search_results = $twitter_rest.search(string, lang: "en").take(25)
+        search_results = $twitter_rest.search(string, lang: "en").take(20)
         search.update_attributes(result: search_results, updated_at: Time.now)
       end 
     else  
-      search_results = $twitter_rest.search(string, lang: "en").take(25)
+      search_results = $twitter_rest.search(string, lang: "en").take(20)
       search = TwitterSearch.create(query: string, result: search_results)
     end
     search
