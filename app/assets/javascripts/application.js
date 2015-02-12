@@ -15,5 +15,3 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
-
-$( ".dropdown-menu" ).wrap( "<div class='twitter-feed'></div>" );
