@@ -20,12 +20,12 @@ class SoundcloudController < ApplicationController
   # end
 
   def users
-    city = 'Perth'
+    city = 'Barcelona'
     @streams = []
     @search = SoundcloudSearch.add(city)
     @users = @search.result.sort! { |a, b| b['followers_count'] <=> a['followers_count'] }
     @users.delete_if { |user| user["city"] != city }
-    @users = @users.take(20)
+    @users = @users.take(10)
     @users.each do |user|
       @user_track = client.get('/tracks', user_id: user["id"], limit: 1)
       @user_track.first
@@ -33,6 +33,7 @@ class SoundcloudController < ApplicationController
         @streams << @user_track.first
       end
     end
+    @test_track = @streams.first.uri
   end
 
 end
