@@ -1,8 +1,7 @@
 function initialize() {
     var options = {atmosphere: true};
         var earth = new WE.map('earth_div', options);
-        WE.tileLayer('https://s3-us-west-1.amazonaws.com/globy/map1/{z}/{x}/{y}.png').addTo(earth);
-                     // 'https://s3-us-west-1.amazonaws.com/globe33/map/0/0/0.png
+        WE.tileLayer('https://s3-us-west-1.amazonaws.com/globeglobe/finalmap/{z}/{x}/{y}.png').addTo(earth);
 
         // var marker = WE.marker([51.5, -0.09]).addTo(earth);
         // marker.bindPopup("<b>Hello world!</b><br>I am a popup.<br /><span style='font-size:10px;color:#999'>Tip: Another popup is hidden in Cairo..</span>", {maxWidth: 150, closeButton: true}).openPopup();
