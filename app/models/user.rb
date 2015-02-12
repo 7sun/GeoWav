@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
   include ActiveModel::SecurePassword
 
+  serialize :favorites, Array 
+  
   has_secure_password
 
   validates :first_name, presence: true
