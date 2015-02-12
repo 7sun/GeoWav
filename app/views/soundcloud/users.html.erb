@@ -17,7 +17,7 @@
     </div>
     <ul id="playlist" class="list-group">
     	<% @streams.each_with_index do |stream, index| %>
-    		<li id=<%="track-#{index}"%> onclick=<%= "loadTrack(\"#{stream.uri}\",#{index})"%>><%= stream.user.username %> : <%= stream.title %></li>
+    		<li id=<%="track-#{index}"%> onclick=<%= "loadTrack(\"#{stream['uri']}\",#{index})"%>><%= stream['user']['username'] %> : <%= stream['title'] %></li>
 		<% end %>
     </ul>
 </div>

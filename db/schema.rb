@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20150212223324) do
     t.string   "result"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "tracks"
   end
 
   create_table "twitter_searches", force: :cascade do |t|
