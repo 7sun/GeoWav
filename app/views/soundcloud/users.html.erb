@@ -1,7 +1,7 @@
 <header>
 <h1>GLOBO-TRON 5000 | <%= @search.updated_at %></h1>
 </header>
-<div class="player">
+<div id="player">
     <div class="pl"></div>
     <div class="title"></div>
     <div class="artist"></div>
@@ -9,22 +9,15 @@
     <div class="volume"></div>
     <div class="tracker"></div>
     <div class="controls">
-        <div id="play" class="icon-play3" value=<%= stream.uri %> onclick="playTrack()"></div>
-        $('#play').val();
+        <div id="play" class="icon-play3" onclick="playTrack()"></div>
         <div class="pause icon-pause2" onclick="pauseTrack()"></div>
-        <div class="rew icon-backward2" onclick="loadTrack()"></div>
+        <div class="rew icon-backward2" onclick="prevTrack()"></div>
         <div class="fwd icon-forward3" onclick="nextTrack()"></div>
         <div class="icon-menu4"></div>
     </div>
     <ul id="playlist" class="list-group">
     	<% @streams.each_with_index do |stream, index| %>
-            <% if @streams[index+1] != nil %>
-                <p><% next_track = @streams[index+1].uri %></p>
-            <% end %>
-            <p><% prev_track = @streams[index-1].uri %></p>
-    		<li onclick=<%= "loadTrack(" + "'" + stream.uri + "'" + ")"%>><%= stream.user.username %> : <%= stream.title %></li>
-            <li onclick=<%= "getTrack(#{stream.uri.to_s}, #{next_track.to_s}, #{prev_track.to_s})" %>><%= stream.user.username %> : <%= stream.title %></li>
-            <li onclick="getTrack( <%= stream.uri, next_track, prev_track %> )"><%= stream.user.username %> : <%= stream.title %></li>
+    		<li id=<%="track-#{index}"%> onclick=<%= "loadTrack(\"#{stream.uri}\",#{index})"%>><%= stream.user.username %> : <%= stream.title %></li>
 		<% end %>
     </ul>
 </div>

@@ -7,28 +7,10 @@
 var widgetIframe = document.getElementById('sc-widget'),
     widget       = SC.Widget(widgetIframe);
 
-var playlist = []
-
-function buildPlaylist(track){
-    playlist.push(track);
-}
-
-
-// var next_track = "";
-// var prev_track = "";
-
-// function getTrack(current, next, prev) {
-//     var current_track = "'" + current + "'";
-//     next_track = "'" + next + "'";
-//     prev_track = "'" + prev + "'";
-
-//     loadTrack(current_track);
-}
+var currentTrack = "";
 
 function nextTrack(){
-    if (next_track != ""){
-        loadTrack(next_track);
-    }
+    document.getElementById("track-" + (currentTrack + 1)).onclick();
 }
 
 function playTrack() {
@@ -40,12 +22,12 @@ function pauseTrack() {
 }
 
 function prevTrack() {
-	widget.prev();
+	document.getElementById("track-" + (currentTrack - 1)).onclick();
 }
 
-
-function loadTrack(track) {
-
+function loadTrack(track, index) {
+    currentTrack = index;
+    document.getElementById("player").currentTrack = index;
 	widget.load(track, { auto_play:true });
 }
 
