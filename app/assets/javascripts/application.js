@@ -13,6 +13,7 @@
 //= require jquery
 //= require bootstrap-sprockets
 //= require jquery_ujs
+//= require globe
 //= require angular
 //= require angular-resource
 //= require angular-rails-templates

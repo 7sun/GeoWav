@@ -6,7 +6,8 @@
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
-<body ng-app>
+<body ng-app onload="initialize()">
+  <div id="earth_div"></div>
 
 <%= yield %>
 
