@@ -18,7 +18,7 @@
     </div>
     <a ng-click="getTracks('Los Angeles')">CLICK ME</a>
     <ul ng-repeat="track in tracks" id="playlist" class="list-group">
-        <li id="{{$index}}" ng-click="loadTrack(track.uri, $index)"> {{$index}} {{track.user.username}} : {{track.title}}</li>
+        <li id="{{$index}}" ng-click="loadTrack($index)"> {{$index}} {{track.user.username}} : {{track.title}}</li>
     </ul>
 </div>
 

@@ -6,8 +6,13 @@ angular
 		// var self = this;
 		$scope.getTracks = getTracks;
 		$scope.loadTrack = loadTrack;
+		$scope.nextTrack = nextTrack;
+		$scope.prevTrack = prevTrack;
+		$scope.playTrack = playTrack;
+		$scope.pauseTrack = pauseTrack;
 
 		$scope.currentTrack = "";
+
 		var widgetIframe = document.getElementById('sc-widget'),
     widget       = SC.Widget(widgetIframe);
 
@@ -20,15 +25,18 @@ angular
 			})
 		}
 
-		function loadTrack(track, index) {
-		    currentTrack = index;
+		function loadTrack(index) {
+		    $scope.currentTrack = index;
+		    var track = $scope.tracks[index].uri
+		    console.log(track);
 				widget.load(track, { auto_play:true });
 				console.log(currentTrack);
 		}
 
 		function nextTrack(){
-			var track = $scope.tracks[currentTrack + 1];
+			var track = $scope.tracks[$scope.currentTrack + 1].uri;
 			widget.load(track, { auto_play:true });
+			$scope.currentTrack = $scope.currentTrack + 1;
 		}
 
 		function playTrack() {
@@ -39,14 +47,10 @@ angular
 			widget.pause();
 		}
 
-		// function prevTrack() {
-		// 	document.getElementById("track-" + (currentTrack - 1)).onclick();
-		// }
-
-// function loadTrack(track, index) {
-//     currentTrack = index;
-//     document.getElementById("player").currentTrack = index;
-// 	widget.load(track, { auto_play:true });
-// }
+		function prevTrack() {
+			var track = $scope.tracks[$scope.currentTrack - 1].uri;
+			widget.load(track, { auto_play:true });
+			$scope.currentTrack = $scope.currentTrack - 1;
+		}
 
 }
