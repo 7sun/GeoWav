@@ -10,6 +10,10 @@ Rails.application.routes.draw do
   get '/login' => 'sessions#new', as: :login 
   post '/login' => 'sessions#create'
  
- resources :users
+  resources :users
+
+  namespace :api do
+    resources :playlists
+  end
 
 end

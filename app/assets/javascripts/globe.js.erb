@@ -7,7 +7,7 @@ function initialize() {
         // marker.bindPopup("<b>Hello world!</b><br>I am a popup.<br /><span style='font-size:10px;color:#999'>Tip: Another popup is hidden in Cairo..</span>", {maxWidth: 150, closeButton: true}).openPopup();
 
         var marker = WE.marker([34.048961, -118.226624]).addTo(earth);
-        marker.bindPopup("<b>Los Angeles</b><br>California", {maxWidth: 120, closeButton: false});
+        marker.bindPopup("<b onclick='initializePlaylist(\"Los Angeles\")'>Los Angeles</b><br>California", {maxWidth: 120, closeButton: false});
         marker.on('click', function() {
             earth.panTo([34.048961, -118.226624]);
         }); 
@@ -458,7 +458,6 @@ function initialize() {
         marker74.on('click', function() {
             earth.panTo([-37.814107, 144.96328]);
         });
-
 
         // *** DEFAULT POINT AND ZOOM ON STARTUP ***
 
