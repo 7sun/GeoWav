@@ -1,6 +1,7 @@
 <header>
 <h1>GLOBO-TRON 5000 | <%= @search.updated_at %></h1>
 </header>
+<div ng-controller="trackController">
 <div id="player">
     <div class="pl"></div>
     <div class="title"></div>
@@ -9,20 +10,21 @@
     <div class="volume"></div>
     <div class="tracker"></div>
     <div class="controls">
-        <div id="play" class="icon-play3" onclick="playTrack()"></div>
-        <div class="pause icon-pause2" onclick="pauseTrack()"></div>
-        <div class="rew icon-backward2" onclick="prevTrack()"></div>
-        <div class="fwd icon-forward3" onclick="nextTrack()"></div>
+        <div id="play" class="icon-play3" ng-click="playTrack()"></div>
+        <div class="pause icon-pause2" ng-click="pauseTrack()"></div>
+        <div class="rew icon-backward2" ng-click="prevTrack()"></div>
+        <div class="fwd icon-forward3" ng-click="nextTrack()"></div>
         <div class="icon-menu4"></div>
     </div>
-    <ul id="playlist" class="list-group">
-    	<% @streams.each_with_index do |stream, index| %>
-    		<li id=<%="track-#{index}"%> onclick=<%= "loadTrack(\"#{stream['uri']}\",#{index})"%>><%= stream['user']['username'] %> : <%= stream['title'] %></li>
-		<% end %>
+    <a ng-click="getTracks('Los Angeles')">CLICK ME</a>
+    <ul ng-repeat="track in tracks" id="playlist" class="list-group">
+        <li id="{{$index}}" ng-click="loadTrack(track.uri, $index)"> {{$index}} {{track.user.username}} : {{track.title}}</li>
     </ul>
 </div>
 
 
 <iframe id="sc-widget" src=<%= "https://w.soundcloud.com/player/?url=#{@test_track}?client_id=#{ENV['soundcloud_client_id']}" %> width="300" height="200" scrolling="no" frameborder="no"></iframe>
+    <div id="earth_div"></div>
+</div>
 
 <%= javascript_include_tag 'sc-widget' %>
