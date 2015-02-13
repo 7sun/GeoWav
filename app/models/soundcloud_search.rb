@@ -11,22 +11,22 @@ class SoundcloudSearch < ActiveRecord::Base
     if search = SoundcloudSearch.find_by(query: city)
       if search.updated_at < 10.minutes.ago # WAS not created within the last 10 minutes
         users = client.get('/users', q: city, limit: 100)
-        tracks = getTrack(users)
+        tracks = getTrack(users, city)
         search.update_attributes(result: users, tracks: tracks, updated_at: Time.now)
       end
     else #Does NOT exist in DB
       users = client.get('/users', q: city, limit: 100)
-      users = users.sort! { |a, b| b['followers_count'] <=> a['followers_count'] }
-      users.delete_if { |user| user['city'] != city }
-      users = users.take(10)
-      tracks = getTrack(users)
+      tracks = getTrack(users, city)
       search = SoundcloudSearch.create(query: city, result: users, tracks: tracks)
     end
     search
   end
 
-  def self.getTrack(users)
+  def self.getTrack(users, city)
     tracks = []
+    users = users.sort! { |a, b| b['followers_count'] <=> a['followers_count'] }
+    users.delete_if { |user| user['city'] != city }
+    users = users.take(10)
     users.each do |user|
       user_track = client.get('/tracks', user_id: user["id"], limit: 1)
       user_track.first
@@ -34,7 +34,6 @@ class SoundcloudSearch < ActiveRecord::Base
         tracks << user_track.first
       end
     end
-    puts tracks
     tracks
   end
 

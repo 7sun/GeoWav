@@ -9,7 +9,7 @@ function initialize() {
         var openMarker;
 
         var marker = WE.marker([34.048961, -118.226624]).addTo(earth);
-        marker.bindPopup("<b>Los Angeles</b><br>California", {maxWidth: 120, closeButton: false});
+        marker.bindPopup("<b onclick='initializePlaylist(\"Los Angeles\")'>Los Angeles</b><br>California", {maxWidth: 120, closeButton: false});
         marker.on('click', function() {
             if(!!openMarker){
                 openMarker.closePopup();
@@ -761,7 +761,6 @@ function initialize() {
             openMarker = marker74;
             earth.panTo([-37.814107, 144.96328]);
         });
-
 
         // *** DEFAULT POINT AND ZOOM ON STARTUP ***
 
