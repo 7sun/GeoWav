@@ -10,11 +10,18 @@ angular
 		$scope.prevTrack = prevTrack;
 		$scope.playTrack = playTrack;
 		$scope.pauseTrack = pauseTrack;
-
 		$scope.currentTrack = "";
 
 		var widgetIframe = document.getElementById('sc-widget'),
     widget       = SC.Widget(widgetIframe);
+
+    $(document).on('click', '[data-city-name]', function(e){
+    	console.log($(e.currentTarget).data('city-name'));
+
+    	city = $(e.currentTarget).data('city-name');
+
+    	getTracks(city);
+    })
 
 		function getTracks(city){
 			console.log("clicked");

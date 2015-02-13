@@ -19,19 +19,22 @@
 // }
 
 .we-pm-icon {
-	background-image: url(image_path('marker-48.png'));
-	width: 41px !important;
+	background-image: url(image_path('marker-48.png')) !important;
+	background-size: 100%;
+	width: 48px !important;
 	height: 48px !important;
 	margin-left: -25px !important;
 	margin-top: -52px !important;
 	z-index: 2;
+	cursor: pointer;
 }
 
 .we-pm-icon:hover {
-	background-image: url(image_path('orange-48.png'));
-	width: 41px !important;
-	height: 48px !important;
-	margin-left: -25px !important;
-	margin-top: -52px !important;
-	z-index: 2;
+	background-image: url(image_path('orange-48.png')) !important;
+// 	background-size: 100%;
+// 	width: 25px !important;
+// 	height: 41px !important;
+// 	margin-left: -25px !important;
+// 	margin-top: -52px !important;
+// 	z-index: 2;
 }
