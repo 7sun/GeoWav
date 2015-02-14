@@ -23,4 +23,4 @@
 
 
 //= require ng-app/main
-//= require_tree ./ng-app/controllers/
+//= require_tree ./ng-app/controllers
