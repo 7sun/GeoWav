@@ -7,8 +7,9 @@
 <div ng-controller="trackController">
 <div id="player">
     <div class="pl"></div>
-    <div class="title"></div>
-    <div class="artist"></div>
+    <div class="title">{{currentTrack.title}}</div>
+    <div class="artist">{{currentTrack.user.username}}</div>
+    <img ng-src="{{artworkUrl}}" alt="">
     <div class="cover"></div>
     <div class="volume"></div>
     <div class="tracker"></div>

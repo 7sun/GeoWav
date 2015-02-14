@@ -10,6 +10,7 @@ angular
 		$scope.playTrack = playTrack;
 		$scope.pauseTrack = pauseTrack;
 		$scope.getTweets = getTweets;
+		$scope.currentTrackIndex = "";
 		$scope.currentTrack = "";
 
 		var widgetIframe = document.getElementById('sc-widget'),
@@ -19,7 +20,6 @@ angular
     	city = $(e.currentTarget).attr('data-city-name')
     	console.log(city);
     	getTracks(city);
-    	$scope.tracks = [];
     })
 
 		function getTracks(city){
@@ -32,17 +32,27 @@ angular
 		}
 
 		function loadTrack(index) {
-		    $scope.currentTrack = index;
-		    var track = $scope.tracks[index].uri
-		    console.log(track);
-				widget.load(track, { auto_play:true });
-				console.log(currentTrack);
+		    $scope.currentTrackIndex = index;
+		    $scope.currentTrack = $scope.tracks[index]
+		    var trackUri = $scope.tracks[index].uri
+		    $scope.artworkUrl = $scope.currentTrack.artwork_url.replace("large", "t300x300");
+				widget.load(trackUri, { auto_play: true });
 		}
 
 		function nextTrack(){
-			var track = $scope.tracks[$scope.currentTrack + 1].uri;
-			widget.load(track, { auto_play:true });
-			$scope.currentTrack = $scope.currentTrack + 1;
+			$scope.currentTrack = $scope.tracks[$scope.currentTrackIndex + 1]
+			var trackUri = $scope.tracks[$scope.currentTrackIndex + 1].uri;
+			widget.load(trackUri, { auto_play: true });
+			$scope.currentTrackIndex = $scope.currentTrackIndex + 1;
+			$scope.artworkUrl = $scope.currentTrack.artwork_url.replace("large", "t300x300");
+		}
+
+		function prevTrack() {
+			$scope.currentTrack = $scope.tracks[$scope.currentTrackIndex - 1]
+			var trackUri = $scope.tracks[$scope.currentTrackIndex - 1].uri;
+			widget.load(trackUri, { auto_play: true });
+			$scope.currentTrackIndex = $scope.currentTrackIndex - 1;
+			$scope.artworkUrl = $scope.currentTrack.artwork_url.replace("large", "t300x300");
 		}
 
 		function playTrack() {
@@ -51,12 +61,6 @@ angular
 
 		function pauseTrack() {
 			widget.pause();
-		}
-
-		function prevTrack() {
-			var track = $scope.tracks[$scope.currentTrack - 1].uri;
-			widget.load(track, { auto_play:true });
-			$scope.currentTrack = $scope.currentTrack - 1;
 		}
 
 		function getTweets(artist){
