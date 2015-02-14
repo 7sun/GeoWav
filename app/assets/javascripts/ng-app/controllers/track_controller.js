@@ -16,20 +16,19 @@ angular
     widget       = SC.Widget(widgetIframe);
 
     $(document).on('click', '[data-city-name]', function(e){
-    	console.log($(e.currentTarget).data('city-name'));
-
-    	city = $(e.currentTarget).data('city-name');
-
+    	city = $(e.currentTarget).attr('data-city-name')
+    	console.log(city);
     	getTracks(city);
+    	$scope.tracks = [];
     })
 
 		function getTracks(city){
-			console.log("clicked");
+			console.log("getting tracks!");
 			$http.get('playlist/' + city)
 			.success(function(data){
 				$scope.tracks = data;
-				console.log(data);
 			})
+			console.log($scope.tracks);
 		}
 
 		function loadTrack(index) {
