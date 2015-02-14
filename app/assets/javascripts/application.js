@@ -14,9 +14,9 @@
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require sc-api
-
 //= require globe
 //= require angular
 //= require angular-resource
+//= require angular-rails-templates
 //= require ng-app/main
 //= require ng-app/controllers/track_controller
