@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get '/twitter'      => 'twitter#index', as: :twitter
 
   get '/playlist/:city'  => 'soundcloud#playlist'
+  get '/tweets/:artist'  => 'twitter#tweets'
 
   get '/signup'    => 'users#new', as: :signup
   get '/login' => 'sessions#new', as: :login 

@@ -10,6 +10,7 @@ angular
 		$scope.prevTrack = prevTrack;
 		$scope.playTrack = playTrack;
 		$scope.pauseTrack = pauseTrack;
+		$scope.getTweets = getTweets;
 		$scope.currentTrack = "";
 
 		var widgetIframe = document.getElementById('sc-widget'),
@@ -58,5 +59,17 @@ angular
 			widget.load(track, { auto_play:true });
 			$scope.currentTrack = $scope.currentTrack - 1;
 		}
+
+		function getTweets(artist){
+			console.log("getting tweets!");
+			$http.get('/tweets/' + artist)
+			.success(function(data){
+				$scope.tweets = data;
+			})
+			console.log($scope.tweets);
+		}
+
+
+
 
 }
