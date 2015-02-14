@@ -2,7 +2,7 @@ function initialize() {
     console.log("earth initialized");
     var options = {atmosphere: true};
         var earth = new WE.map('earth_div', options);
-        WE.tileLayer('https://s3-us-west-1.amazonaws.com/globeglobe/finalmap/{z}/{x}/{y}.png').addTo(earth);
+        WE.tileLayer('http://s3-us-west-1.amazonaws.com/globeglobe/finalmap/{z}/{x}/{y}.png').addTo(earth);
 
         function updateCityName(city, country) {
             document.getElementById('city').innerHTML = city + ", " + country;
