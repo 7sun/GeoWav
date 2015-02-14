@@ -21,4 +21,4 @@
 //= require angular-rails-templates
 
 //= require ng-app/main
-//= require_tree ./ng-app/controllers
+//= require ./ng-app/controllers/track_controller
