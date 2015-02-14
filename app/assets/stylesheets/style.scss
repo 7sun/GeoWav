@@ -1,27 +1,57 @@
 /*SOUNDCLOUD STYLES*********************************************************************************/
 
+body {
+  background-color: black;
+}
+
 header {
-	width: 100%;
-	height:60px;
-	background-color: #2c3e50;
+  position: absolute;
+  z-index: -2;
 }
 
 h1 {
-	color: white;
-	margin: 0px;
-	padding-top: 16px;
-	padding-left: 20px;
+  font-size: 60px;
+  color: white;
+  padding: 0px;
+  margin-bottom: 0px;
+  width: 300px;
+}
+
+.links{
+  font-size: 20px !important;
+  color: white;
+  float: right;
+  padding-top: 0px;
 }
 
 .player {
 	width: 100%;
 	height: 30px;
 	background-color: #ecf0f1;
+  position: absolute;
+  top: 220px;
+  display: none;
+  z-index: 2;
 	// border: 1px solid #bdc3c7;
+}
+
+#widget {
+  display: none;
+  position: absolute;
+}
+
+#load-playlist {
+  z-index: 2; 
+  position: absolute;
+  top: 180px;
 }
 
 .controls {
 	padding: 5px;
+  position: absolute;
+  z-index: 2;
+  top: 220px;
+  color: white;
 	div {
 		display: inline;
 		padding: 16px;
@@ -31,7 +61,17 @@ h1 {
 	}
 }
 
+#city {
+  position: absolute;
+  top: 120px;
+  color: white;
+  z-index: 2 !important; 
+}
+
 #playlist {
+  position: absolute;
+  z-index: 2;
+  top: 260px;
 	float: right;
 	width: 400px;
 	margin: 0;
@@ -65,10 +105,6 @@ h1 {
 	opacity: 1;
 }
 
-iframe {
-	float: right;
-}
-
 
 /*TWITTER STYLES*********************************************************************************/
 
@@ -82,25 +118,51 @@ iframe {
   max-height: 100vh;
   overflow-y: scroll;
   direction: rtl;
+  position: absolute;
 }
 
 /*move bird to the left*/
-.dropdown-toggle {
-  margin-right: 10px;
+// .dropdown-toggle {
+//   margin-right: 10px;
+// }
+
+// .dropdown-menu {
+//   /*margin-right: 14px;*/
+//   // max-height: 100vh;
+//   // overflow-y: scroll;
+//   // direction: rtl;
+//   direction: ltr;
+//   max-height: 100vh;
+// }
+
+// .media-left {
+//   float: left !important;
+// }
+
+GLOBE STYLES
+#earth_div {
+  z-index: -1;
+  position: absolute;
 }
 
-.dropdown-menu {
-  /*margin-right: 14px;*/
-  // max-height: 100vh;
-  // overflow-y: scroll;
-  // direction: rtl;
-  direction: ltr;
-  max-height: 100vh;
+.we-pm-icon {
+  background-image: url(image_path('marker-48.png')) !important;
+  background-size: 100%;
+  width: 48px !important;
+  height: 48px !important;
+  margin-left: -25px !important;
+  margin-top: -52px !important;
+  cursor: pointer;
+  position: absolute;
+  z-index: 1 !important;
 }
 
-.media-left {
-  float: left !important;
+.we-pm-icon:hover {
+  background-image: url(image_path('orange-48.png')) !important;
+//  background-size: 100%;
+//  width: 25px !important;
+//  height: 41px !important;
+//  margin-left: -25px !important;
+//  margin-top: -52px !important;
+//  z-index: 2;
 }
-
-
-

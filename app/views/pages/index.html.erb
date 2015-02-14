@@ -1,9 +1,22 @@
-<header>
-<h1>GLOBO-TRON 5000</h1>
-</header>
-<span class='links'>
-  <%= link_to "Signup", new_user_path, class: 'button' %> or <%= link_to "Login", login_path, class: 'button' %>
-</span>
+
+
+ 
+
+<!-- <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <ul class="nav navbar-nav navbar-left">
+      <li id="title">Geomancy</li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+
+  
+    </ul>
+  </div>
+</nav> -->
+  <div id="earth_div"></div>
+
+<!--   <h1>Geomancy<span class="links"><a href="/login">Login</a> | <a href="/signup">Signup</a></span></h1> -->
+
 <div ng-controller="trackController">
 <div id="player">
     <div class="pl"></div>
@@ -42,12 +55,12 @@
                     </div>
                   </li>
                 </ul>
-            <hr>
         </div>
 
 
-<iframe id="sc-widget" src=<%= "https://w.soundcloud.com/player/?url=#{@test_track}?client_id=#{ENV['soundcloud_client_id']}" %> width="300" height="200" scrolling="no" frameborder="no"></iframe>
-    <div id="earth_div"></div>
+<iframe id="sc-widget" src=<%= "https://w.soundcloud.com/player/?url=#{@test_track}?client_id=#{ENV['soundcloud_client_id']}" %> width="0" height="0" scrolling="no" frameborder="no"></iframe>
+
 </div>
+
 
 

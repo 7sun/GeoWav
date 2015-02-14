@@ -41,6 +41,8 @@ gem 'bourbon'
 
 gem 'angularjs-rails'
 
+gem 'angular-ui-bootstrap-rails'
+
 gem 'angular-rails-templates'
 
 # Use ActiveModel has_secure_password
