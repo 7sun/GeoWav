@@ -10,19 +10,25 @@ angular
 		$scope.prevTrack = prevTrack;
 		$scope.playTrack = playTrack;
 		$scope.pauseTrack = pauseTrack;
-
 		$scope.currentTrack = "";
 
 		var widgetIframe = document.getElementById('sc-widget'),
     widget       = SC.Widget(widgetIframe);
 
+    $(document).on('click', '[data-city-name]', function(e){
+    	city = $(e.currentTarget).attr('data-city-name')
+    	console.log(city);
+    	getTracks(city);
+    	$scope.tracks = [];
+    })
+
 		function getTracks(city){
-			console.log("clicked");
+			console.log("getting tracks!");
 			$http.get('playlist/' + city)
 			.success(function(data){
 				$scope.tracks = data;
-				console.log(data);
 			})
+			console.log($scope.tracks);
 		}
 
 		function loadTrack(index) {

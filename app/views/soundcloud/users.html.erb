@@ -16,9 +16,10 @@
         <div class="fwd icon-forward3" ng-click="nextTrack()"></div>
         <div class="icon-menu4"></div>
     </div>
-    <a ng-click="getTracks('Los Angeles')">CLICK ME</a>
-    <ul ng-repeat="track in tracks" id="playlist" class="list-group">
-        <li id="{{$index}}" ng-click="loadTrack($index)"> {{$index}} {{track.user.username}} : {{track.title}}</li>
+    <h2 id="city"></h2>
+    <button id="load-playlist">Load Playlist</button>
+    <ul id="playlist" class="list-group">
+        <li ng-repeat="track in tracks" id="{{$index}}" ng-click="loadTrack($index)">{{track.user.username}} - {{track.title}}</li>
     </ul>
 </div>
 
