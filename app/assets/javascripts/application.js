@@ -17,5 +17,5 @@
 //= require globe
 //= require angular
 //= require angular-resource
-//= require ng-app/main
-//= require ng-app/controllers/track_controller
+//= require ./ng-app/main
+//= require ./ng-app/controllers/track_controller
