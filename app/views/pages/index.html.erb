@@ -29,7 +29,7 @@
               <ul class="media-list">
                   <li class="media" ng-repeat="tweet in tweets">
                     <a class="media-left" href="#" title="#">
-                      <img src="{{tweet.user.profile_image_url}}" alt="">
+                      <img ng-src="{{tweet.user.profile_image_url}}" alt="">
                     </a>
                     <div class="media-body">
                       <h5 class="media-heading">{{tweet.user.name}}</h5>
