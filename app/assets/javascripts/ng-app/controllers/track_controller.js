@@ -3,7 +3,6 @@ angular
 	.controller("trackController", trackController);
 
 	function trackController($scope, $http, $resource){
-		// var self = this;
 		$scope.getTracks = getTracks;
 		$scope.loadTrack = loadTrack;
 		$scope.nextTrack = nextTrack;
@@ -68,8 +67,5 @@ angular
 			})
 			console.log($scope.tweets);
 		}
-
-
-
 
 }

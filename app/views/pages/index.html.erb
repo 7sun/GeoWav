@@ -1,1 +1,53 @@
-<div id="earth_div"></div>
+<header>
+<h1>GLOBO-TRON 5000</h1>
+</header>
+<span class='links'>
+  <%= link_to "Signup", new_user_path, class: 'button' %> or <%= link_to "Login", login_path, class: 'button' %>
+</span>
+<div ng-controller="trackController">
+<div id="player">
+    <div class="pl"></div>
+    <div class="title"></div>
+    <div class="artist"></div>
+    <div class="cover"></div>
+    <div class="volume"></div>
+    <div class="tracker"></div>
+    <div class="controls">
+        <div id="play" class="icon-play3" ng-click="playTrack()"></div>
+        <div class="pause icon-pause2" ng-click="pauseTrack()"></div>
+        <div class="rew icon-backward2" ng-click="prevTrack()"></div>
+        <div class="fwd icon-forward3" ng-click="nextTrack()"></div>
+        <div class="icon-menu4"></div>
+    </div>
+    <h2 id="city"></h2>
+    <button id="load-playlist">Load Playlist</button>
+    <ul id="playlist" class="list-group">
+        <li ng-repeat="track in tracks" id="{{$index}}" ng-click="loadTrack($index); getTweets(track.user.username)">{{track.user.username}} - {{track.title}}</li>
+    </ul>
+</div>
+        <div class="twitter-feed">
+              <ul class="media-list">
+                  <li class="media" ng-repeat="tweet in tweets">
+                    <a class="media-left" href="#" title="#">
+                      <img src="{{tweet.user.profile_image_url}}" alt="">
+                    </a>
+                    <div class="media-body">
+                      <h5 class="media-heading">{{tweet.user.name}}</h5>
+                      <h5> <a href="http://www.twitter.com/{{tweet.user.screen_name}}" target="_blank">@{{tweet.user.screen_name}}</a></h5>
+                      <p>
+                        <a href="http://www.twitter.com/{{tweet.user.screen_name}}/status/{{tweet.id}}" target="_blank">
+                        {{tweet.text}}
+                         </a>
+                      </p>
+                    </div>
+                  </li>
+                </ul>
+            <hr>
+        </div>
+
+
+<iframe id="sc-widget" src=<%= "https://w.soundcloud.com/player/?url=#{@test_track}?client_id=#{ENV['soundcloud_client_id']}" %> width="300" height="200" scrolling="no" frameborder="no"></iframe>
+    <div id="earth_div"></div>
+</div>
+
+

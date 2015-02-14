@@ -1,10 +1,6 @@
 Rails.application.routes.draw do
 
   root 'pages#index'
-  get '/soundcloud'   => 'soundcloud#users'
-  get '/embeds'       => 'soundcloud#embeds'
-  get '/music-player' => 'pages#soundcloud'
-  get '/twitter'      => 'twitter#index', as: :twitter
 
   get '/playlist/:city'  => 'soundcloud#playlist'
   get '/tweets/:artist'  => 'twitter#tweets'
@@ -14,10 +10,6 @@ Rails.application.routes.draw do
   post '/login' => 'sessions#create'
  
   resources :users
-
-  # resources :soundcloud do
-  #   get :users
-  # end
 
   namespace :api do
     resources :playlists

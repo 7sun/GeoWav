@@ -13,6 +13,7 @@
 //= require jquery
 //= require bootstrap-sprockets
 //= require jquery_ujs
+//= require sc-api
 //= require globe-api
 //= require globe
 //= require angular
