@@ -1,9 +1,16 @@
+// Fades in the globe
+
+$(document).ready(function () {
+    $('div.hidden').fadeIn(7000).removeClass('hidden');
+});
+
 // Animation toggle for globe rotation
 
 var animation = true;
 function stopRotate(){
     animation = false;
 };
+
 
 // Initializes globe display settings, adds city markers, and starts rotation animation 
 
