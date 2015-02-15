@@ -6,11 +6,15 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(params.require(:user).permit!)
+    @user.favorites = []
     
     if @user.save
-      redirect_to :twitter
+      session[:user_id] = @user.id.to_s
+      flash[:info] = "Welcome! Start adding songs to your favorites!"
+      redirect_to root_path
     else
-      render :new
+      flash.now[:danger] = @user.errors.full_messages.to_sentence
+      redirect_to root_path
     end 
 
 

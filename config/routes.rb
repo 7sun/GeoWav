@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get '/tweets/:artist'  => 'twitter#tweets'
 
   get '/signup'    => 'users#new', as: :signup
+  post '/signup'   => 'users#create'
   get '/login' => 'sessions#new', as: :login 
   post '/login' => 'sessions#create'
   get '/logout' => 'sessions#destroy', as: :logout
