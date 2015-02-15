@@ -17,5 +17,6 @@
 //= require globe
 //= require angular
 //= require angular-resource
+//= require angular-ui-bootstrap
 //= require ./ng-app/main
 //= require ./ng-app/controllers/track_controller

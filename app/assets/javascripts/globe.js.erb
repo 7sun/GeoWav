@@ -1,8 +1,17 @@
+// Animation toggle for globe rotation
+
+var animation = true;
+function stopRotate(){
+    animation = false;
+};
+
+// Initializes globe display settings, adds city markers, and starts rotation animation 
+
 function initialize() {
     console.log("earth initialized");
-    var options = {atmosphere: true};
+    var options = {atmosphere: true, zooming: false };
         var earth = new WE.map('earth_div', options);
-        WE.tileLayer('http://s3-us-west-1.amazonaws.com/globeglobe/finalmap/{z}/{x}/{y}.png').addTo(earth);
+        WE.tileLayer('https://s3-us-west-1.amazonaws.com/globeglobe/finalmap/{z}/{x}/{y}.png').addTo(earth);
 
         function updateCityName(city, country) {
             document.getElementById('city').innerHTML = city + ", " + country;
@@ -334,13 +343,15 @@ function initialize() {
 
                  // **** ROTATING ANIMATION ****
 
-   // var before = null;
-   //      requestAnimationFrame(function animate(now) {
-   //          var c = earth.getPosition();
-   //          var elapsed = before? now - before: 0;
-   //          before = now;
-   //          earth.setCenter([c[0], c[1] + 0.1*(elapsed/30)]);
-   //          requestAnimationFrame(animate);
-   //      });
-
+   var before = null;
+   var myReq = null;
+        requestAnimationFrame(function animate(now) {
+            if (animation == true){
+            var c = earth.getPosition();
+            var elapsed = before? now - before: 0;
+            before = now;
+            earth.setCenter([c[0], c[1] + 0.1*(elapsed/30)]);
+            myReq = requestAnimationFrame(animate);
+            }
+        });
 }
