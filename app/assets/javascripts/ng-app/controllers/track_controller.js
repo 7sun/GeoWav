@@ -1,4 +1,4 @@
-angular
+	angular
 	.module("GloboApp")
 	.controller("trackController", trackController);
 

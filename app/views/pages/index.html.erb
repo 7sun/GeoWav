@@ -13,6 +13,15 @@
     </ul>
   </div>
 </nav> -->
+<div class="header">
+  <h1>Geomancy</h1>
+</div>
+
+<div class="h2-container">
+    <h2 id="city"></h2>
+    <button id="load-playlist">Load Playlist</button>
+</div>
+
   <div id="earth_div" class="hidden"></div>
 
 <!--   <h1>Geomancy<span class="links"><a href="/login">Login</a> | <a href="/signup">Signup</a></span></h1> -->
@@ -33,8 +42,6 @@
         <div class="fwd icon-forward3" ng-click="nextTrack()"></div>
         <div class="icon-menu4"></div>
     </div>
-    <h2 id="city"></h2>
-    <button id="load-playlist">Load Playlist</button>
     <ul id="playlist" class="list-group">
         <li ng-repeat="track in tracks" id="{{$index}}" ng-click="loadTrack($index); getTweets(track.user.username)">{{track.user.username}} - {{track.title}}</li>
     </ul>
