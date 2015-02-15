@@ -22,7 +22,7 @@ function initialize() {
 
 
         function updateCityName(city, country) {
-            document.getElementById('city').innerHTML = city + ", " + country;
+            document.getElementById('city').innerHTML = "<span style='font-weight:500'>" + city + ",<br>\n " + "</span>" + country;
             $('#load-playlist').attr('data-city-name', city);
         }
 
@@ -347,7 +347,7 @@ function initialize() {
 
 // Default point and zoom
 
-        earth.setView([34.137952, -118.232117], 2.75);
+        earth.setView([34.137952, -118.232117], 2.9);
 
 // Rotating Animation
 
