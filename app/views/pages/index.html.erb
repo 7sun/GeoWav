@@ -14,8 +14,105 @@
   </div>
 </nav> -->
 <div class="header">
-  <h1>Geomancy</h1>
+  <h1>GEOMANCY</h1>
+
+  <div class="links">
+    <% if current_user %>
+      <p>Logged in as: <%= current_user.first_name + ' ' + current_user.last_name %> &nbsp;| &nbsp;<a href="/logout">Logout</a></p>
+      <% else %>
+      <p><a href="#loginModal" data-toggle="modal" data-target="#loginModal">Login</a> &nbsp;| &nbsp;<a href="#signupModal" data-toggle="modal" data-target="#signupModal">Signup</a></p>
+    <% end %>
+  </div>
 </div>
+
+<div class="flash-messages">
+  <% flash.each do |key, value| %>
+
+  <div class="alert alert-<%= key %>" role="alert">
+    <%= value %><br>
+  </div>
+
+  <% end %>
+</div>
+
+<!-- LOGIN MODAL BEGINS HERE (part of header) -->
+
+  <div class="modal fade" id="loginModal">
+    <div class="modal-dialog">
+       <div class="modal-content">
+         <div class="modal-header">
+          <button type="button" class="close x" data-dismiss="modal" aria-hidden="true">×</button>
+          <h4 class="modal-title">Login</h4>
+        </div>
+        <div class="modal-body">
+
+        <%= form_for :user, url: '/login' do |f| %> 
+          <div class="form-group">
+            <label for="email">Email address</label>
+            <%= f.email_field :email, placeholder: 'Enter your email', class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <%= f.password_field :password, placeholder: 'Enter your password', class: "form-control" %>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <a href="#" data-dismiss="modal" class="btn x">Close</a>
+          <%= f.submit "Login!", class: "btn btn-primary" %>
+        </div>
+        <% end %>
+       </div>
+     </div>
+  </div>
+
+<!-- LOGIN MODAL ENDS HERE (part of header) -->
+
+
+
+<!-- SIGNUP MODAL BEGINS HERE (part of header) -->
+
+  <div class="modal fade" id="signupModal">
+    <div class="modal-dialog">
+       <div class="modal-content">
+         <div class="modal-header">
+          <button type="button" class="close x" data-dismiss="modal" aria-hidden="true">×</button>
+          <h4 class="modal-title">Signup</h4>
+        </div>
+        <div class="modal-body">
+
+        <%= form_for :user, url: '/signup' do |f| %> 
+          <div class="form-group">
+            <label for="first_name">First Name</label>
+            <%= f.text_field :first_name, placeholder: 'Enter your first name', class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <label for="last_name">Last Name</label>
+            <%= f.text_field :last_name, placeholder: 'Enter your last name', class: "form-control" %>
+          </div>          
+          <div class="form-group">
+            <label for="email">Email address</label>
+            <%= f.text_field :email, placeholder: 'Enter your email address', class: "form-control" %>
+          </div>  
+          <div class="form-group">
+            <label for="password">Password</label>
+            <%= f.password_field :password, placeholder: 'Choose a password (at least 6 characters)', class: "form-control" %>
+          </div>  
+          <div class="form-group">
+            <label for="password_confirmation">Password Confirmation</label>
+            <%= f.password_field :password_confirmation, placeholder: 'Enter your password once more', class: "form-control" %>
+          </div>  
+        </div>
+        <div class="modal-footer">
+          <a href="#" data-dismiss="modal" class="btn x">Close</a>
+          <%= f.submit "Signup!", class: "btn btn-primary" %>
+        </div>
+        <% end %>
+       </div>
+     </div>
+  </div>
+
+<!-- SIGNUP ENDS HERE (part of header) -->
+
 
   <div id="earth_div" class="hidden"></div>
 

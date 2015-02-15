@@ -1,5 +1,9 @@
 /* Page Styles*******************************************/
 
+body {
+  background-color: black;
+}
+
 .header {
   width: 100%;
   padding-bottom: -10px;
@@ -21,7 +25,7 @@ h1 {
 .city-container {
   z-index: 2;
   margin: auto;
-  width: 15%;
+  width: 20%;
   position: absolute;
   z-index: 2;
   bottom: 450px;
@@ -40,23 +44,63 @@ h1 {
   font-weight: 200;
 }
 
-/*SOUNDCLOUD STYLES*********************************************************************************/
-
-body {
-  background-color: black;
-}
-
-header {
-  position: absolute;
-  z-index: -2;
-}
-
 .links{
   font-size: 20px !important;
   color: white;
-  float: right;
-  padding-top: 0px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 300;
 }
+
+a {
+  color: white !important;
+}
+ 
+a:hover {
+  color: #FF5500 !important;
+  text-decoration: none;
+}
+
+.modal-body {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 300;
+}
+
+.modal-header {
+  font-family: 'Francois One', sans-serif;
+  font-size: 36px;
+}
+
+.btn-primary:hover {
+  background-color: #FF5500 !important;
+}
+
+.btn {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 300;
+  border: none;
+}
+
+.x {
+  color: black !important;
+}
+
+.x:hover {
+  background-color: none !important;
+  color: #FF5500 !important
+}
+
+.flash-messages {
+  text-align: center;
+  width: 40%;
+  margin: auto;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 300;
+}
+
+/*SOUNDCLOUD STYLES*********************************************************************************/
 
 .player {
 	width: 100%;
