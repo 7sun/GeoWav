@@ -10,15 +10,41 @@ body {
 }
 
 h1 {
-  margin: 10px auto;
-  font-size: 65px;
-  color: white;
-  padding: 12px 0px;
-  width: 30%;
+  font-size: 24px;
+  color: black;
   text-align: center;
-  height: initial;
-  border-bottom: 1px solid white;
-  font-family: 'Francois One', sans-serif;
+  padding-top: 5px;
+  font-family: 'Raleway', sans-serif;
+}
+
+#hexagon {
+  width: 200px;
+  height: 35px;
+  background: white;
+  position: relative;
+  margin: 50px auto 10px;
+}
+#hexagon:before {
+  content: "";
+  position: absolute;
+  top: -25px;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-left: 100px solid transparent;
+  border-right: 100px solid transparent;
+  border-bottom: 25px solid white;
+}
+#hexagon:after {
+  content: "";
+  position: absolute;
+  bottom: -25px;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-left: 100px solid transparent;
+  border-right: 100px solid transparent;
+  border-top: 25px solid white;
 }
 
 
