@@ -25,7 +25,70 @@
     <% end %>
   </div>
 
-Search by city: <input type='text' ng-model='s.name'>
+
+<div ng-controller="trackController">
+<div class="dropdown">
+  <button class="btn btn-default dropdown-toggle" type="button" id="city-dropdown" data-toggle="dropdown" aria-expanded="true">
+    Explore a City
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" role="menu">
+    <li role="presentation"><a role="menuitem" tabindex="-1" ng-click="getTracks('Athens')">Athens, United States</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Atlanta, United States</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Austin, United States</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Barcelona, Spain</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Berlin, Germany</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Birmingham, England</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Bogota, Colombia</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Bristol, England</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Brooklyn, United States</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Brussels, Belgium</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Buenos Aires, Argentina</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Caracas, Venezuela</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Chicago, United States</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Detroit, United States</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Dublin, Ireland</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Edinburgh, Scotland</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Frankfurt, Germany</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Glasgow, Scotland</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Hong Kong, China</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Honolulu, United States</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Ibiza, Spain</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Johannesburg, South Africa</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Kingston, Jamaica</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Kuala Lumpur, Malaysia</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Lagos, Nigeria</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">London, England</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Los Angeles, United States</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Manchester, England</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Mar Del Plata, Argentina</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Melbourne, Australia</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Miami, United States</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Montreal, Canada</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Moscow, Russia</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Mumbai, India</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Nairobi, Kenya</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Nashville, United States</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">New York City, United States</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Paris, France</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Reykjavik, Iceland</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Rio de Janeiro, Brazil</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">San Francisco, United States</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">San Juan, Puerto Rico</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Santiago, Chile</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Seattle, United States</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Seoul, South Korea</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Shanghai, China</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Sheffield, England</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Singapore, Singapore</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Stockholm, Sweden</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Sydney, Australia</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Tokyo, Japan</a></li>
+  </ul>
+</div>
+</div>
+
+
 
 
 <!-- VALIDATION FLASH MESSAGES -->
