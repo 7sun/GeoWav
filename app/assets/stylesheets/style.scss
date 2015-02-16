@@ -154,16 +154,16 @@ footer {
 }
 
 .controls {
-	padding: 4px 0 0;
+  padding: 4px 0 0;
   z-index: 2;
   text-align: center;
-	div {
-		display: inline;
-		padding: 0 26px 0px 0px;
-	}
-	div:hover {
-		color: #FF5500;
-	}
+  div {
+    display: inline;
+    padding: 0 26px 0px 0px;
+  }
+  div:hover {
+    color: #FF5500;
+  }
   div.icon-menu4 {
       padding: 5px 0 5px 5px;
   }
@@ -173,23 +173,22 @@ footer {
   // position: absolute;
   z-index: 2;
   top: 183px;
-	width: 400px;
-	margin: 0;
-	list-style: none;
+  width: 400px;
+  margin: 0;
+  list-style: none;
   border: 1px solid #5F5E5E;
   background-color: rgba(50, 49, 47, 0.5);
-  padding-left: 0;
-	li {
-    padding: 15px 20px;
+  li {
+    padding: 15px 20px 15px 0px;
     margin: 0;
-	}
+  }
   li:last-child {
     border-bottom: none;  
   }
-	li:hover {
+  li:hover {
     background-color: rgba(114, 113, 111, 0.5);
-		cursor: pointer;
-	}
+    cursor: pointer;
+  }
 }
 
 .artwork {
@@ -241,15 +240,15 @@ iframe {
 }
 
 .show, .hide {
-	@include transition-property(transform);
-	@include transition-duration(3.0s);
-	@include transition-timing-function(ease-out);
-	@include transition-delay(0.5s);
-	opacity: 0;
+  @include transition-property(transform);
+  @include transition-duration(3.0s);
+  @include transition-timing-function(ease-out);
+  @include transition-delay(0.5s);
+  opacity: 0;
 }
 
 .show {
-	opacity: 1;
+  opacity: 1;
 }
 
 #filler {
