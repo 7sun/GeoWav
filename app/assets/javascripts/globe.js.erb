@@ -1,4 +1,4 @@
-// Fades in the globe
+ // Fades in the globe
 
 $(document).ready(function () {
     $('div.hidden').fadeIn(9000).removeClass('hidden');
@@ -17,7 +17,7 @@ function initialize() {
     console.log("earth initialized");
     var options = {atmosphere: false, zooming: false };
         earth = new WE.map('earth_div', options);
-        WE.tileLayer('https://s3-us-west-1.amazonaws.com/thegeomancy/mappi/{z}/{x}/{y}.png').addTo(earth)
+        WE.tileLayer('https://s3-us-west-1.amazonaws.com/thegeomancy/globobo/{z}/{x}/{y}.png').addTo(earth)
 
 
 
@@ -46,7 +46,7 @@ function initialize() {
 
         var marker4 = WE.marker([40.712784, -74.005941]).addTo(earth);
         marker4.on('click', function() {
-            updateCityName('New York', 'United States');            
+            updateCityName('New York City', 'United States');            
             earth.panTo([40.712784, -74.005941]);
         }); 
 
