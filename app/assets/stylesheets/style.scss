@@ -8,6 +8,13 @@ body {
   font-family: 'Century Gothic', sans-serif; 
 }
 
+html {
+  position: relative;
+  min-height: 840px;
+}
+
+
+
 .header {
   width: 94%;
   height: 70px;
@@ -15,12 +22,6 @@ body {
   border-bottom: 1px solid #979797;
 }
 
-footer {
-  width: 94%;
-  height: 70px;
-  margin: 0 3%;
-  border-top: 1px solid #979797;
-}
 
 h1 {
   // font-size: 24px;
@@ -101,19 +102,22 @@ a:hover {
 
 .outer-container {
   @include outer-container;
-  // min-height: ;
   margin-bottom: -70px; 
-  z-index: -3 !important;
 }
 
-.outer-container:after {
-  content: "";
-  display: block;
-}
-
-footer, .outer-container:after {
-  height: 70px; 
-  margin-top: 50px;
+footer {
+  position: absolute;
+  bottom: 0;
+  color: rgb(139,139,139);
+  text-align: center;
+  line-height: 1.428;
+  font-size: 14px;
+  text-decoration: none;
+  background-color: transparent;
+  width: 94%;
+  height: 50px;
+  margin: 0 3%;
+  border-top: 1px solid #979797;
 }
 
 /*SOUNDCLOUD STYLES****************************************************************************/

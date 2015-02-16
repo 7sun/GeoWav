@@ -10,8 +10,70 @@
       <p><a href="#loginModal" data-toggle="modal" data-target="#loginModal">Login</a> &nbsp;| &nbsp;<a href="#signupModal" data-toggle="modal" data-target="#signupModal">Signup</a></p>
     <% end %>
   </div>
-</div>
 
+
+<!-- <div ng-controller="trackController">
+<div class="dropdown">
+  <button class="btn btn-default dropdown-toggle" type="button" id="city-dropdown" data-toggle="dropdown" aria-expanded="true">
+    Explore a City
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" role="menu">
+    <li role="presentation"><a role="menuitem" tabindex="-1" ng-click="getTracks('Athens')">Athens, United States</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" ng-click="getTracks('Atlanta')">Atlanta, United States</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" ng-click="getTracks('Austin')">Austin, United States</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" ng-click="getTracks('Barcelona')">Barcelona, Spain</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" ng-click="getTracks('Berlin')">Berlin, Germany</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" ng-click="getTracks('Birmingham')">Birmingham, England</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" ng-click="getTracks('Bogota')">Bogota, Colombia</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" ng-click="getTracks('Bristol')">Bristol, England</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" ng-click="getTracks('Brooklyn')">Brooklyn, United States</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" ng-click="getTracks('Brussels')">Brussels, Belgium</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" ng-click="getTracks('Buenos Aires')">Buenos Aires, Argentina</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" ng-click="getTracks('Caracas')">Caracas, Venezuela</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" ng-click="getTracks('Chicago')">Chicago, United States</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" ng-click="getTracks('Detroit')">Detroit, United States</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" ng-click="getTracks('Dublin')">Dublin, Ireland</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" ng-click="getTracks('Edinbugrh')">Edinburgh, Scotland</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" ng-click="getTracks('Frankfurt')">Frankfurt, Germany</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" ng-click="getTracks('Glasgow')">Glasgow, Scotland</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" ng-click="getTracks('Hong Kong')">Hong Kong, China</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" ng-click="getTracks('Honolulu')">Honolulu, United States</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" ng-click="getTracks('Ibiza')">Ibiza, Spain</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" ng-click="getTracks('Johannesburg')">Johannesburg, South Africa</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" ng-click="getTracks('Kingston')">Kingston, Jamaica</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" ng-click="getTracks('Kuala Lumpur')">Kuala Lumpur, Malaysia</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" ng-click="getTracks('Lagos')">Lagos, Nigeria</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" ng-click="getTracks('London')">London, England</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" ng-click="getTracks('Los Angeles')">Los Angeles, United States</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" ng-click="getTracks('Manchester')">Manchester, England</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" ng-click="getTracks('Mar Del Plata')">Mar Del Plata, Argentina</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" ng-click="getTracks('Melbourne')">Melbourne, Australia</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" ng-click="getTracks('Miami')">Miami, United States</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" ng-click="getTracks('Montreal')">Montreal, Canada</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" ng-click="getTracks('Moscow')">Moscow, Russia</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" ng-click="getTracks('Mumbai')">Mumbai, India</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" ng-click="getTracks('Nairobi')">Nairobi, Kenya</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" ng-click="getTracks('Nashville')">Nashville, United States</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" ng-click="getTracks('New York City')">New York City, United States</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" ng-click="getTracks('Paris')">Paris, France</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" ng-click="getTracks('Reykjavik')">Reykjavik, Iceland</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" ng-click="getTracks('Rio de Janeiro')">Rio de Janeiro, Brazil</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" ng-click="getTracks('San Francisco')">San Francisco, United States</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" ng-click="getTracks('San Juan')">San Juan, Puerto Rico</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" ng-click="getTracks('Santiago')">Santiago, Chile</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" ng-click="getTracks('Seattle')">Seattle, United States</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" ng-click="getTracks('Seoul')">Seoul, South Korea</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" ng-click="getTracks('Shanghai')">Shanghai, China</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" ng-click="getTracks('Sheffield')">Sheffield, England</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" ng-click="getTracks('Singapore')">Singapore, Singapore</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" ng-click="getTracks('Stockholm')">Stockholm, Sweden</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" ng-click="getTracks('Sydney')">Sydney, Australia</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" ng-click="getTracks('Tokyo')">Tokyo, Japan</a></li>
+  </ul>
+</div> -->
+
+</div> <!-- ends header div -->
 
 <!-- EARTH BEGINS HERE -->
 
@@ -93,9 +155,9 @@
 
 <!-- FOOTER -->
 
-<footer>MPK DESIGNS</footer>
+<footer>© ZindiceZ 2014</footer>
 
-Search by city: <input type='text' ng-model='s.name'>
+<!-- Search by city: <input type='text' ng-model='s.name'> -->
 
 
 <!-- VALIDATION FLASH MESSAGES -->
