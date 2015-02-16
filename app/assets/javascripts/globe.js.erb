@@ -19,12 +19,16 @@ function initialize() {
         earth = new WE.map('earth_div', options);
         WE.tileLayer('https://s3-us-west-1.amazonaws.com/geomancy/mappy/{z}/{x}/{y}.png').addTo(earth)
 
-
-
         function updateCityName(city, country) {
             document.getElementById('city').innerHTML = "<span style='font-weight:500'>" + city + ",<br>\n " + "</span>" + country;
             $('#load-playlist').attr('data-city-name', city);
         }
+
+        // function updateCityNameFromDropDown(lat, lang) {
+        //     updateCityName(city, country);
+        //     document.getElementById('city-dropdown').addEventListener("click", function(event) {
+        //         earth.panTo(lat, lang);
+        //     })
 
         var marker = WE.marker([34.048961, -118.226624]).addTo(earth);
         marker.on('click', function() {
@@ -292,7 +296,7 @@ function initialize() {
 
         var marker68 = WE.marker([-1.292066, 36.821946]).addTo(earth);
         marker68.on('click', function() {
-            updateCityName('Niarobi', 'Kenya');
+            updateCityName('Nairobi', 'Kenya');
             earth.panTo([-1.292066, 36.821946]);
         });
 

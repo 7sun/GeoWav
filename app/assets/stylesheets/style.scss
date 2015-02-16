@@ -17,6 +17,16 @@ h1 {
   font-family: 'Raleway', sans-serif;
 }
 
+.dropdown {
+  position: absolute;
+  z-index: 4;
+}
+
+.dropdown-menu {
+  font-family: 'Raleway', sans-serif;
+  color: black !important;
+}
+
 #hexagon {
   width: 200px;
   height: 35px;
@@ -78,13 +88,10 @@ h1 {
   right: 20px;
   font-family: 'Raleway', sans-serif;
   font-weight: 300;
-}
-
-a {
   color: white !important;
 }
  
-a:hover {
+.links:hover {
   color: #FF5500 !important;
   text-decoration: none;
 }
