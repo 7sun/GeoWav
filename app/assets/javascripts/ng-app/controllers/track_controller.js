@@ -12,6 +12,8 @@
 		$scope.getTweets = getTweets;
 		$scope.currentTrackIndex = "";
 		$scope.currentTrack = "";
+		$scope.showPlayer = false;
+		$scope.showPlaylist = false;
 
 		var widgetIframe = document.getElementById('sc-widget'),
     widget       = SC.Widget(widgetIframe);
@@ -20,7 +22,13 @@
     	city = $(e.currentTarget).attr('data-city-name')
     	console.log(city);
     	getTracks(city);
+    	showPlaylist();
     })
+
+
+    function showPlaylist() {
+    	$('#playlist').removeClass('hidden')
+		}
 
 		function getTracks(city){
 			console.log("getting tracks!");

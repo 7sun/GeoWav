@@ -87,7 +87,7 @@
 <!-- PLAYER BEGINS HERE -->
 
   <div class="soundcloud">
-    <div id="player">
+    <div id="player" ng-show="showPlayer">
       <img class="artwork" ng-src="{{artworkUrl}}" alt="">
       <div id="player-box">
         <div class="track-info">
@@ -105,13 +105,14 @@
         </div>
       </div>
     </div>
-    <ul id="playlist" class="list-group">
-        <li ng-repeat="track in tracks" id="{{$index}}" ng-click="loadTrack($index); getTweets(track.user.username)">
+    <ul id="playlist" ng-show="showPlaylist" ng-click="showPlayer=true">
+        <li ng-repeat="track in tracks" id="{{$index}}" ng-click="loadTrack($index); getTweets(track.user.username);">
           <p class="track-num">{{$index + 1}}</p>
           <p class="track-title">{{track.title}}</p>
           <p class="track-artist">{{track.user.username}}</p>
         </li>
     </ul>
+    <p id="filler"></p>
   </div>
 
 
@@ -121,7 +122,7 @@
     <div id="city-container" class="hidden">
       <h2 id="city"></h2>
       <div class="abs-left">
-        <button id="load-playlist">Load Playlist</button>
+        <button id="load-playlist" ng-click="showPlaylist=true">Load Playlist</button>
       </div>
     </div>
   </div>
