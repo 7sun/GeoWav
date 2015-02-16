@@ -47,7 +47,6 @@ a {
 }
  
 a:hover {
-  text-decoration: overline;
   color: white;
 }
 
@@ -267,16 +266,14 @@ iframe {
 }
 
 .twitter-feed {
-  border-radius: 5px;
-  padding: 10px 10px 5px 10px;
+  // border-radius: 5px;
+  // padding: 10px 10px 5px 10px;
   width: 320px;
   margin-bottom: 30px;
-  font-family: "Helvetica Neue", Roboto, "Segoe UI", Calibri, sans-serif;
   unicode-bidi:bidi-override;
   max-height: 100vh;
   overflow-y: scroll;
-  direction: rtl;
-  position: absolute;
+  // position: absolute;
 }
 
 /* GLOBE STYLES*********************************************************************************/
