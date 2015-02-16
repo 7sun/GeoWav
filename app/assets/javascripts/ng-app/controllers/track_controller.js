@@ -75,3 +75,4 @@
 }
 
 trackController.$inject = ['$scope', '$http'];
+
