@@ -1,97 +1,58 @@
-/* Page Styles*******************************************/
+/* General Styles******************************************************************************/
+
+$max-width: 100%;
 
 body {
   background-color: black;
+  color: white;
 }
 
 .header {
-  width: 100%;
-  padding-bottom: -10px;
+  width: 94%;
+  height: 70px;
+  margin: 0 auto;
+  border-bottom: 1px solid #979797;
 }
 
 h1 {
-  font-size: 24px;
-  color: black;
-  text-align: center;
-  padding-top: 5px;
-  font-family: 'Raleway', sans-serif;
-}
-
-#hexagon {
-  width: 200px;
-  height: 35px;
-  background: white;
-  position: relative;
-  margin: 50px auto 10px;
-}
-#hexagon:before {
-  content: "";
-  position: absolute;
-  top: -25px;
-  left: 0;
-  width: 0;
-  height: 0;
-  border-left: 100px solid transparent;
-  border-right: 100px solid transparent;
-  border-bottom: 25px solid white;
-}
-#hexagon:after {
-  content: "";
-  position: absolute;
-  bottom: -25px;
-  left: 0;
-  width: 0;
-  height: 0;
-  border-left: 100px solid transparent;
-  border-right: 100px solid transparent;
-  border-top: 25px solid white;
+  // font-size: 24px;
+  // padding-top: 5px;
+  font-family: 'Oswald', sans-serif;
+  // text-decoration: overline;
+  float: left;
 }
 
 
-.city-container {
-  z-index: 2;
-  margin: auto;
-  width: 20%;
-  position: absolute;
-  z-index: 2;
-  bottom: 450px;
-
-}
-
-#city {
-  text-align: center;
-  opacity: 1;
-  padding: 20px;
-  border: 1px solid white;
-  background-color: rgba(0, 0, 13, 0.3);
-  color: white;
-  z-index: 2;
-  font-family: 'Raleway', sans-serif;
-  font-weight: 200;
-}
 
 .links{
-  font-size: 20px !important;
-  color: white;
-  position: absolute;
-  top: 20px;
-  right: 20px;
+  font-size: 12px;
   font-family: 'Raleway', sans-serif;
   font-weight: 300;
+  text-transform: uppercase;
+  margin: 26px 0;
+  float: right;
 }
 
 a {
-  color: white !important;
+  color: white;
+  font-size: 12px;
 }
  
 a:hover {
-  color: #FF5500 !important;
-  text-decoration: none;
+  text-decoration: overline;
+  color: white;
 }
 
-p {
-  font-size: 20px !important;
+
+.abs-left {
+  left: 50%;
+  top: 390px;
+  position: absolute;
 }
+// p {
+//   font-size: 20px;
+//   margin: 0;
+// }
 
 .modal-body {
   font-family: 'Raleway', sans-serif;
@@ -104,7 +65,7 @@ p {
 }
 
 .btn-primary:hover {
-  background-color: #FF5500 !important;
+  background-color: #FF5500;
 }
 
 .btn {
@@ -114,12 +75,12 @@ p {
 }
 
 .x {
-  color: black !important;
+  color: black;
 }
 
 .x:hover {
-  background-color: none !important;
-  color: #FF5500 !important
+  background-color: none;
+  color: #FF5500;
 }
 
 .flash-messages {
@@ -130,39 +91,47 @@ p {
   font-weight: 300;
 }
 
-/*SOUNDCLOUD STYLES*********************************************************************************/
+.outer-container {
+  @include outer-container;
+}
 
-.player {
-	width: 100%;
-	height: 30px;
-	background-color: #ecf0f1;
-  position: absolute;
-  top: 220px;
-  display: none;
+/*SOUNDCLOUD STYLES****************************************************************************/
+
+.soundcloud {
+  @include span-columns(4);
+}
+
+#player {
+  // position: absolute;
   z-index: 2;
-	// border: 1px solid #bdc3c7;
+  width: 368px;
+  padding: 20px;
+  margin: 0px 0px 0px 16px;
+  background-color: #2c3e50;
 }
 
 #widget {
   display: none;
-  position: absolute;
+  // position: absolute;
 }
 
 #load-playlist {
   z-index: 2; 
-  position: absolute;
-  top: 180px;
+  position: relative;
+  left: -50%;
+  background-color: black;
+  border: 1px solid #979797;
+  padding: 4px 24px;
 }
 
 .controls {
 	padding: 5px;
-  position: absolute;
   z-index: 2;
   top: 220px;
-  color: white;
+  clear: left;
 	div {
 		display: inline;
-		padding: 16px;
+		padding: 0 26px 0px 0px;
 	}
 	div:hover {
 		color: #FF5500;
@@ -170,17 +139,15 @@ p {
 }
 
 #playlist {
-  position: absolute;
+  // position: absolute;
   z-index: 2;
-  top: 260px;
-	float: right;
+  top: 183px;
 	width: 400px;
 	margin: 0;
 	list-style: none;
 	padding: 0px;
 	li {
     padding: 10px 20px;
-    color: white;
     background-color: #2c3e50;
     opacity: .96;
     margin: 16px;
@@ -189,6 +156,36 @@ p {
 		background-color: #FF5500;
 		cursor: pointer;
 	}
+}
+
+.artwork {
+  float: left;
+  margin-right: 10px;
+}
+
+
+.track-num {
+  font-size: 22px;
+  float: left;
+  margin-right: 10px;
+  opacity: 0.5;
+  padding-bottom: 20px;
+}
+
+.track-title {
+  font-size: 12px;
+  margin-bottom: 6px;
+  font-weight: bold;
+}
+
+.track-artist {
+  font-size: 12px;
+  font-weight: bold;
+  color: #42BFFA;
+}
+
+iframe {
+  display: none;
 }
 
 .show, .hide {
@@ -204,7 +201,28 @@ p {
 }
 
 
+/* CENTER COLUMN STYLES**************************************************************************/
+
+.center-column {
+  @include span-columns(4);
+}
+
+#city {
+  text-align: center;
+  z-index: 2;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 200;
+  margin-top: 10px;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+
 /*TWITTER STYLES*********************************************************************************/
+
+.twitter {
+  @include span-columns(4);
+}
 
 .twitter-feed {
   border-radius: 5px;
@@ -219,28 +237,14 @@ p {
   position: absolute;
 }
 
-/*move bird to the left*/
-// .dropdown-toggle {
-//   margin-right: 10px;
-// }
+/* GLOBE STYLES*********************************************************************************/
 
-// .dropdown-menu {
-//   /*margin-right: 14px;*/
-//   // max-height: 100vh;
-//   // overflow-y: scroll;
-//   // direction: rtl;
-//   direction: ltr;
-//   max-height: 100vh;
-// }
-
-// .media-left {
-//   float: left !important;
-// }
-
-GLOBE STYLES
 #earth_div {
   z-index: -1;
-  position: absolute;
+  @include fill-parent();
+  position: absolute !important;
+  top: 90px;
+  // width: 1440px;
 }
 
 .we-pm-icon {
@@ -248,9 +252,9 @@ GLOBE STYLES
   background-size: 100%;
   width: 24px !important;
   height: 24px !important;
-  margin-top: -21px !important;
+  margin-top: -24px !important;
   cursor: pointer;
-  position: absolute;
+  // position: absolute !important;
   z-index: 1 !important;
 }
 

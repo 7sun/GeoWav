@@ -35,7 +35,8 @@
 		    $scope.currentTrackIndex = index;
 		    $scope.currentTrack = $scope.tracks[index]
 		    var trackUri = $scope.tracks[index].uri
-		    $scope.artworkUrl = $scope.currentTrack.artwork_url.replace("large", "t300x300");
+		    $scope.artworkUrl = $scope.currentTrack.artwork_url
+		    // .replace("large", "t300x300");
 				widget.load(trackUri, { auto_play: true });
 		}
 
@@ -44,7 +45,8 @@
 			var trackUri = $scope.tracks[$scope.currentTrackIndex + 1].uri;
 			widget.load(trackUri, { auto_play: true });
 			$scope.currentTrackIndex = $scope.currentTrackIndex + 1;
-			$scope.artworkUrl = $scope.currentTrack.artwork_url.replace("large", "t300x300");
+			$scope.artworkUrl = $scope.currentTrack.artwork_url
+			// .replace("large", "t300x300");
 		}
 
 		function prevTrack() {
@@ -52,7 +54,8 @@
 			var trackUri = $scope.tracks[$scope.currentTrackIndex - 1].uri;
 			widget.load(trackUri, { auto_play: true });
 			$scope.currentTrackIndex = $scope.currentTrackIndex - 1;
-			$scope.artworkUrl = $scope.currentTrack.artwork_url.replace("large", "t300x300");
+			$scope.artworkUrl = $scope.currentTrack.artwork_url
+			// .replace("large", "t300x300");
 		}
 
 		function playTrack() {

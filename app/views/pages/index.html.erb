@@ -1,21 +1,7 @@
+<!-- HEADER BEGINS HERE -->
 
-
- 
-
-<!-- <nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <ul class="nav navbar-nav navbar-left">
-      <li id="title">Geomancy</li>
-    </ul>
-    <ul class="nav navbar-nav navbar-right">
-
-  
-    </ul>
-  </div>
-</nav> -->
-<div class="hexagon">
+<div class="header">
   <h1>GEOMANCY</h1>
-</div>
 
   <div class="links">
     <% if current_user %>
@@ -24,6 +10,83 @@
       <p><a href="#loginModal" data-toggle="modal" data-target="#loginModal">Login</a> &nbsp;| &nbsp;<a href="#signupModal" data-toggle="modal" data-target="#signupModal">Signup</a></p>
     <% end %>
   </div>
+</div>
+
+
+<!-- EARTH BEGINS HERE -->
+
+<div id="earth_div" class="hidden"></div>
+
+
+<!-- <div class="outer-container"> -->
+
+<div class="outer-container">
+
+<!-- PLAYER BEGINS HERE -->
+
+  <div class="soundcloud" ng-controller="trackController">
+    <div id="player">
+      <img class="artwork" ng-src="{{artworkUrl}}" alt="">
+      <div class="title">{{currentTrack.title}}</div>
+      <div class="artist">{{currentTrack.user.username}}</div>
+      <div class="volume"></div>
+      <div class="tracker"></div>
+      <div class="controls">
+          <div id="play" class="icon-play3" ng-click="playTrack()"></div>
+          <div class="pause icon-pause2" ng-click="pauseTrack()"></div>
+          <div class="rew icon-backward2" ng-click="prevTrack()"></div>
+          <div class="fwd icon-forward3" ng-click="nextTrack()"></div>
+          <div class="icon-menu4"></div>
+      </div>
+    </div>
+    <ul id="playlist" class="list-group">
+        <li ng-repeat="track in tracks" id="{{$index}}" ng-click="loadTrack($index); getTweets(track.user.username)">
+          <p class="track-num">{{$index + 1}}</p>
+          <p class="track-title">{{track.title}}</p>
+          <p class="track-artist">{{track.user.username}}</p>
+        </li>
+    </ul>
+  </div>
+
+
+<!-- CENTER COLUMN BEGINS HERE -->
+
+  <div class="center-column">
+    <div id="city-container" class="hidden">
+      <h2 id="city"></h2>
+      <div class="abs-left">
+        <button id="load-playlist">Load Playlist</button>
+      </div>
+    </div>
+  </div>
+
+
+<!-- TWITTER FEED BEGINS HERE -->
+
+  <div class="twitter" ng-controller="trackController">
+    <div class="twitter-feed">
+      <ul class="media-list">
+          <li class="media" ng-repeat="tweet in tweets">
+            <a class="media-left" href="#" title="#">
+              <img ng-src="{{tweet.user.profile_image_url}}" alt="">
+            </a>
+            <div class="media-body">
+              <h5 class="media-heading">{{tweet.user.name}}</h5>
+              <h5> <a href="http://www.twitter.com/{{tweet.user.screen_name}}" target="_blank">@{{tweet.user.screen_name}}</a></h5>
+              <p>
+                <a href="http://www.twitter.com/{{tweet.user.screen_name}}/status/{{tweet.id}}" target="_blank">
+                {{tweet.text}}
+                 </a>
+              </p>
+            </div>
+          </li>
+        </ul>
+    </div>
+  </div>
+
+</div><!-- Closes outer container -->
+
+
 
 <!-- VALIDATION FLASH MESSAGES -->
 
@@ -38,6 +101,7 @@
     <% end %>
   </div>
 </div>
+
 
 <!-- LOGIN MODAL BEGINS HERE (part of header) -->
 
@@ -68,9 +132,6 @@
        </div>
      </div>
   </div>
-
-<!-- LOGIN MODAL ENDS HERE (part of header) -->
-
 
 
 <!-- SIGNUP MODAL BEGINS HERE (part of header) -->
@@ -115,62 +176,9 @@
      </div>
   </div>
 
-<!-- SIGNUP ENDS HERE (part of header) -->
 
 
-  <div id="earth_div" class="hidden"></div>
-
-<div class="city-container">
-    <h2 id="city"></h2>
-    <button id="load-playlist">Load Playlist</button>
-</div>
-
-
-<!--   <h1>Geomancy<span class="links"><a href="/login">Login</a> | <a href="/signup">Signup</a></span></h1> -->
-
-<div ng-controller="trackController">
-<div id="player">
-    <div class="pl"></div>
-    <div class="title">{{currentTrack.title}}</div>
-    <div class="artist">{{currentTrack.user.username}}</div>
-    <img ng-src="{{artworkUrl}}" alt="">
-    <div class="cover"></div>
-    <div class="volume"></div>
-    <div class="tracker"></div>
-    <div class="controls">
-        <div id="play" class="icon-play3" ng-click="playTrack()"></div>
-        <div class="pause icon-pause2" ng-click="pauseTrack()"></div>
-        <div class="rew icon-backward2" ng-click="prevTrack()"></div>
-        <div class="fwd icon-forward3" ng-click="nextTrack()"></div>
-        <div class="icon-menu4"></div>
-    </div>
-    <ul id="playlist" class="list-group">
-        <li ng-repeat="track in tracks" id="{{$index}}" ng-click="loadTrack($index); getTweets(track.user.username)">{{track.user.username}} - {{track.title}}</li>
-    </ul>
-</div>
-        <div class="twitter-feed">
-              <ul class="media-list">
-                  <li class="media" ng-repeat="tweet in tweets">
-                    <a class="media-left" href="#" title="#">
-                      <img ng-src="{{tweet.user.profile_image_url}}" alt="">
-                    </a>
-                    <div class="media-body">
-                      <h5 class="media-heading">{{tweet.user.name}}</h5>
-                      <h5> <a href="http://www.twitter.com/{{tweet.user.screen_name}}" target="_blank">@{{tweet.user.screen_name}}</a></h5>
-                      <p>
-                        <a href="http://www.twitter.com/{{tweet.user.screen_name}}/status/{{tweet.id}}" target="_blank">
-                        {{tweet.text}}
-                         </a>
-                      </p>
-                    </div>
-                  </li>
-                </ul>
-        </div>
-
+<!-- HIDDEN SOUNDCLOUD IFRAME -->
 
 <iframe id="sc-widget" src=<%= "https://w.soundcloud.com/player/?url=#{@test_track}?client_id=#{ENV['soundcloud_client_id']}" %> width="0" height="0" scrolling="no" frameborder="no"></iframe>
-
-</div>
-
-
 

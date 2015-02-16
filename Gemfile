@@ -39,6 +39,8 @@ gem 'soundcloud'
 
 gem 'bourbon'
 
+gem 'neat'
+
 gem 'angularjs-rails'
 
 gem 'angular-ui-bootstrap-rails'
