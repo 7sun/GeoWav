@@ -1,7 +1,7 @@
  // Fades in the globe
 
 $(document).ready(function () {
-    $('div.hidden').fadeIn(9000).removeClass('hidden');
+    $('#earth_div').fadeIn(9000).removeClass('hidden');
 });
 
 // Animation toggle for globe rotation
@@ -9,6 +9,10 @@ $(document).ready(function () {
 var animation = true;
 function stopRotate(){
     animation = false;
+}
+
+function showCityName(){
+    $('#city-container').fadeIn(500).removeClass('hidden');
 }
 
 // Initializes globe display settings, adds city markers, and starts rotation animation 
@@ -20,7 +24,7 @@ function initialize() {
         WE.tileLayer('https://s3-us-west-1.amazonaws.com/geomancy/mappy/{z}/{x}/{y}.png').addTo(earth)
 
         function updateCityName(city, country) {
-            document.getElementById('city').innerHTML = "<span style='font-weight:500'>" + city + ",<br>\n " + "</span>" + country;
+            document.getElementById('city').innerHTML = "<span style='font-weight:500'>" + city + ", " + "</span>" + country;
             $('#load-playlist').attr('data-city-name', city);
         }
 
@@ -32,264 +36,308 @@ function initialize() {
 
         var marker = WE.marker([34.048961, -118.226624]).addTo(earth);
         marker.on('click', function() {
-            earth.panTo([34.048961, -118.226624]);
+            showCityName();
             updateCityName('Los Angeles', "United States");
+            earth.panTo([34.048961, -118.226624]);
         });
 
         var marker1 = WE.marker([-37.965042, -57.593079]).addTo(earth);
         marker1.on('click', function() {
-            earth.panTo([-37.965042, -57.593079]);
+            showCityName();
             updateCityName('Mar Del Plata', 'Argentina');
+            earth.panTo([-37.965042, -57.593079]);
         }); 
 
         var marker3 = WE.marker([-22.897683, -43.17627]).addTo(earth);
         marker3.on('click', function() {
+            showCityName();
             updateCityName('Rio de Janeiro', 'Brazil');            
             earth.panTo([-22.897683, -43.17627]);
         }); 
 
         var marker4 = WE.marker([40.712784, -74.005941]).addTo(earth);
         marker4.on('click', function() {
+            showCityName();
             updateCityName('New York City', 'United States');            
             earth.panTo([40.712784, -74.005941]);
         }); 
 
         var marker6 = WE.marker([-34.603723, -58.381593]).addTo(earth);
         marker6.on('click', function() {
+            showCityName();
             updateCityName('Buenos Aires', 'Argentina');            
             earth.panTo([-34.603723, -58.381593]);
         }); 
 
         var marker11 = WE.marker([-33.469120, -70.641997]).addTo(earth);
         marker11.on('click', function() {
+            showCityName();
             updateCityName('Santiago', 'Chile');
             earth.panTo([-33.469120, -70.641997]);
         });
 
         var marker14 = WE.marker([4.598056, -74.075833]).addTo(earth);
         marker14.on('click', function() {
+            showCityName();
             updateCityName('Bogota', 'Colombia');
             earth.panTo([4.598056, -74.075833]);
         });   
 
         var marker15 = WE.marker([10.469640, -66.803719]).addTo(earth);
         marker15.on('click', function() {
+            showCityName();
             updateCityName('Caracas', 'Venezuela');
             earth.panTo([10.469640, -66.803719]);
         });  
 
         var marker19 = WE.marker([17.983333, -76.8]).addTo(earth);
         marker19.on('click', function() {
+            showCityName();
             updateCityName('Kingston', 'Jamaica');
             earth.panTo([17.983333, -76.8]);
         });
         
         var marker22 = WE.marker([41.3833, 2.1833]).addTo(earth);
         marker22.on('click', function() {
+            showCityName();
             updateCityName('Barcelona', 'Spain');
             earth.panTo([41.3833, 2.1833]);
         });
 
         var marker27 = WE.marker([55.755826, 37.6173]).addTo(earth);
         marker27.on('click', function() {
+            showCityName();
             updateCityName('Moscow', 'Russia');
             earth.panTo([55.755826, 37.6173]);
         });
 
         var marker30 = WE.marker([25.761680, -80.19179]).addTo(earth);
         marker30.on('click', function() {
+            showCityName();
             updateCityName('Miami', 'United States');
             earth.panTo([25.761680, -80.19179]);
         });
 
         var marker31 = WE.marker([41.878114, -87.629798]).addTo(earth);
         marker31.on('click', function() {
+            showCityName();
             updateCityName('Chicago', 'United States');
             earth.panTo([41.878114, -87.629798]);
         });
 
         var marker33 = WE.marker([47.606209, -122.332071]).addTo(earth);
         marker33.on('click', function() {
+            showCityName();
             updateCityName('Seattle', 'United States');
             earth.panTo([47.606209, -122.332071]);
         });
 
         var marker34 = WE.marker([52.520007, 13.404954]).addTo(earth);
         marker34.on('click', function() {
+            showCityName();
             updateCityName('Berlin', 'Germany');
             earth.panTo([52.520007, 13.404954]);
         });
 
         var marker36 = WE.marker([30.267153, -97.743061]).addTo(earth);
         marker36.on('click', function() {
+            showCityName();
             updateCityName('Austin', 'United States');
             earth.panTo([30.267153, -97.743061]);
         });
 
         var marker37 = WE.marker([19.075984, 72.877656]).addTo(earth);
         marker37.on('click', function() {
+            showCityName();
             updateCityName('Mumbai', 'India');
             earth.panTo([19.075984, 72.877656]);
         });
 
         var marker38 = WE.marker([36.162664, -86.781602]).addTo(earth);
         marker38.on('click', function() {
+            showCityName();
             updateCityName('Nashville', 'United States');
             earth.panTo([36.162664, -86.781602]);
         });
 
         var marker39 = WE.marker([33.748995, -84.387982]).addTo(earth);
         marker39.on('click', function() {
+            showCityName();
             updateCityName('Atlanta', 'United States');
             earth.panTo([33.748995, -84.387982]);
         });
 
         var marker40 = WE.marker([18.466334, -66.105722]).addTo(earth);
         marker40.on('click', function() {
+            showCityName();
             updateCityName('San Juan', 'Puerto Rico');
             earth.panTo([18.466334, -66.105722]);
         });
 
         var marker41 = WE.marker([37.774929, -122.419416]).addTo(earth);
         marker41.on('click', function() {
+            showCityName();
             updateCityName('San Francisco', 'United States');
             earth.panTo([37.774929, -122.419416]);
         });
 
         var marker42 = WE.marker([51.507351, -0.127758]).addTo(earth);
         marker42.on('click', function() {
+            showCityName();
             updateCityName('London', 'England');
             earth.panTo([51.507351, -0.127758]);
         });
 
         var marker43 = WE.marker([21.306944, -157.858333]).addTo(earth);
         marker43.on('click', function() {
+            showCityName();
             updateCityName('Honolulu', 'United States');
             earth.panTo([21.306944, -157.858333]);
         });
 
         var marker44 = WE.marker([35.709026, 139.731992]).addTo(earth);
         marker44.on('click', function() {
+            showCityName();
             updateCityName('Tokyo','Japan');
             earth.panTo([35.709026, 139.731992]);
         });
 
         var marker45 = WE.marker([48.856614, 2.352222]).addTo(earth);
         marker45.on('click', function() {
+            showCityName();
             updateCityName('Paris', 'France');
             earth.panTo([48.856614, 2.352222]);
         });
 
         var marker46 = WE.marker([50.850340, 4.35171]).addTo(earth);
         marker46.on('click', function() {
+            showCityName();
             updateCityName('Brussels', 'Belgium');
             earth.panTo([50.850340, 4.35171]);
         });
 
         var marker47 = WE.marker([47.497912, 19.040235]).addTo(earth);
         marker47.on('click', function() {
+            showCityName();
             updateCityName('Budapest','Hungary');
             earth.panTo([47.497912, 19.040235]);
         });
 
         var marker48 = WE.marker([55.864237, -4.251806]).addTo(earth);
         marker48.on('click', function() {
+            showCityName();
             updateCityName('Glasgow', 'Scotland');
             earth.panTo([55.864237, -4.251806]);
         });
 
         var marker50 = WE.marker([64.133333, -21.933333]).addTo(earth);
         marker50.on('click', function() {
+            showCityName();
             updateCityName('Reykjavik', 'Iceland');
             earth.panTo([64.133333, -21.933333]);
         });
 
         var marker51 = WE.marker([59.329323, 18.068581]).addTo(earth);
         marker51.on('click', function() {
+            showCityName();
             updateCityName('Stockholm', 'Sweden');
             earth.panTo([59.329323, 18.068581]);
         });
 
         var marker52 = WE.marker([50.110922, 8.682127]).addTo(earth);
         marker52.on('click', function() {
+            showCityName();
             updateCityName('Frankfurt','Germany');
             earth.panTo([50.110922, 8.682127]);
         });
 
         var marker53 = WE.marker([45.501689, -73.567256]).addTo(earth);
         marker53.on('click', function() {
+            showCityName();
             updateCityName('Montreal','Canada');
             earth.panTo([45.501689, -73.567256]);
         });
 
         var marker54 = WE.marker([33.950000, -83.383333]).addTo(earth);
         marker54.on('click', function() {
+            showCityName();
             updateCityName('Athens', 'United States');
             earth.panTo([33.950000, -83.383333]);
         });
 
         var marker55 = WE.marker([42.331427, -83.045754]).addTo(earth);
         marker55.on('click', function() {
+            showCityName();
             updateCityName('Detroit','United States');
             earth.panTo([42.331427, -83.045754]);
         });
 
         var marker56 = WE.marker([53.349805, -6.26031]).addTo(earth);
         marker56.on('click', function() {
+            showCityName();
             updateCityName('Dublin', 'Ireland');
             earth.panTo([53.349805, -6.26031]);
         });
 
         var marker57 = WE.marker([38.906734, 1.420598]).addTo(earth);
         marker57.on('click', function() {
+            showCityName();
             updateCityName('Ibiza', 'Spain');
             earth.panTo([38.906734, 1.420598]);
         });
 
         var marker58 = WE.marker([6.524379, 3.379206]).addTo(earth);
         marker58.on('click', function() {
+            showCityName();
             updateCityName('Lagos', 'Nigeria');
             earth.panTo([6.524379, 3.379206]);
         });
 
         var marker59 = WE.marker([55.953252, -3.188267]).addTo(earth);
         marker59.on('click', function() {
+            showCityName();
             updateCityName('Edinburgh', 'Scotland');
             earth.panTo([55.953252, -3.188267]);
         });
 
         var marker60 = WE.marker([-26.204103, 28.047305]).addTo(earth);
         marker60.on('click', function() {
+            showCityName();
             updateCityName('Johannesburg', 'South Africa');
             earth.panTo([-26.204103, 28.047305]);
         });
 
         var marker63 = WE.marker([3.139003, 101.686855]).addTo(earth);
         marker63.on('click', function() {
+            showCityName();
             updateCityName('Kuala Lumpur', 'Malaysia');
             earth.panTo([3.139003, 101.686855]);
         });
 
         var marker64 = WE.marker([52.486243, -1.890401]).addTo(earth);
         marker64.on('click', function() {
+            showCityName();
             updateCityName('Birmingham', 'England');
             earth.panTo([52.486243, -1.890401]);
         });
 
         var marker65 = WE.marker([53.381129, -1.470085]).addTo(earth);
         marker65.on('click', function() {
+            showCityName();
             updateCityName('Sheffield', 'England');
             earth.panTo([53.381129, -1.470085]);
         });
 
         var marker66 = WE.marker([51.454513, -2.58791]).addTo(earth);
         marker66.on('click', function() {
+            showCityName();
             updateCityName('Bristol', 'England');
             earth.panTo([51.454513, -2.58791]);
         });
 
         var marker67 = WE.marker([53.480759, -2.242631]).addTo(earth);
         marker67.on('click', function() {
+            showCityName();
             updateCityName('Manchester', 'England');
             earth.panTo([53.480759, -2.242631]);
         });
@@ -302,48 +350,56 @@ function initialize() {
 
         var marker69 = WE.marker([31.230416, 121.473701]).addTo(earth);
         marker69.on('click', function() {
+            showCityName();
             updateCityName('Shanghai', 'China');
             earth.panTo([31.230416, 121.473701]);
         });
 
         var marker70 = WE.marker([22.396428, 114.109497]).addTo(earth);
         marker70.on('click', function() {
+            showCityName();
             updateCityName('Hong Kong', 'China');
             earth.panTo([22.396428, 114.109497]);
         });
 
         var marker71 = WE.marker([37.566535, 126.977969]).addTo(earth);
         marker71.on('click', function() {
+            showCityName();
             updateCityName('Seoul', 'South Korea');
             earth.panTo([37.566535, 126.977969]);
         });
 
         var marker72 = WE.marker([1.352083, 103.819836]).addTo(earth);
         marker72.on('click', function() {
+            showCityName();
             updateCityName('Singapore', 'Singapore');
             earth.panTo([1.352083, 103.819836]);
         });
 
         var marker73 = WE.marker([13.756331, 100.501765]).addTo(earth);
         marker73.on('click', function() {
+            showCityName();
             updateCityName('Bangkok', 'Thailand');
             earth.panTo([13.756331, 100.501765]);
         });
 
         var marker74 = WE.marker([-37.814107, 144.96328]).addTo(earth);
         marker74.on('click', function() {
+            showCityName();
             updateCityName('Melbourne', 'Australia');
             earth.panTo([-37.814107, 144.96328]);
         });
 
         var marker75 = WE.marker([-33.814107, 151.2094]).addTo(earth);
         marker75.on('click', function() {
+            showCityName();
             updateCityName('Sydney', 'Australia');
             earth.panTo([-33.814107, 151.2094]);
         });
 
         var marker76 = WE.marker([40.6928, -73.9903]).addTo(earth);
         marker76.on('click', function() {
+            showCityName();
             updateCityName('Brooklyn', 'United States');
             earth.panTo([40.6928, -73.9903]);
         });
@@ -351,7 +407,7 @@ function initialize() {
 
 // Default point and zoom
 
-        earth.setView([34.137952, -118.232117], 2.9);
+        earth.setView([34.137952, -118.232117], 2.5);
 
 // Rotating Animation
 
