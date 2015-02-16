@@ -27,16 +27,18 @@
   <div class="soundcloud" ng-controller="trackController">
     <div id="player">
       <img class="artwork" ng-src="{{artworkUrl}}" alt="">
-      <div class="title">{{currentTrack.title}}</div>
-      <div class="artist">{{currentTrack.user.username}}</div>
-      <div class="volume"></div>
-      <div class="tracker"></div>
-      <div class="controls">
-          <div id="play" class="icon-play3" ng-click="playTrack()"></div>
-          <div class="pause icon-pause2" ng-click="pauseTrack()"></div>
-          <div class="rew icon-backward2" ng-click="prevTrack()"></div>
-          <div class="fwd icon-forward3" ng-click="nextTrack()"></div>
-          <div class="icon-menu4"></div>
+      <div id="player-box">
+        <div class="title">{{currentTrack.title}}</div>
+        <div class="artist">{{currentTrack.user.username}}</div>
+        <div class="volume"></div>
+        <div class="tracker"></div>
+        <div class="controls">
+            <div id="play" class="icon-play3" ng-click="playTrack()"></div>
+            <div class="pause icon-pause2" ng-click="pauseTrack()"></div>
+            <div class="rew icon-backward2" ng-click="prevTrack()"></div>
+            <div class="fwd icon-forward3" ng-click="nextTrack()"></div>
+            <div class="icon-menu4"></div>
+        </div>
       </div>
     </div>
     <ul id="playlist" class="list-group">
