@@ -125,11 +125,12 @@ footer {
 .soundcloud {
   @include span-columns(4);
   min-width: 200px;
+  position: relative;
 }
 
 #player {
   // position: absolute;
-  z-index: 2;
+  z-index: 2 !important;
   width: 368px;
   height: 120px;
   // margin: 20px 0px 0px 23px;
@@ -141,7 +142,7 @@ footer {
 }
 
 #load-playlist {
-  z-index: 2; 
+  z-index: 2 !important; 
   position: relative;
   left: -50%;
   background-color: #1D1D1C;
@@ -155,7 +156,7 @@ footer {
 
 .controls {
   padding: 4px 0 0;
-  z-index: 2;
+  z-index: 2 !important;
   text-align: center;
   div {
     display: inline;
@@ -171,7 +172,7 @@ footer {
 
 #playlist {
   // position: absolute;
-  z-index: 2;
+  z-index: 2 !important;
   top: 183px;
   width: 400px;
   margin: 0;
@@ -279,6 +280,7 @@ iframe {
 
 .twitter {
   @include span-columns(4);
+  position: relative;
 }
 
 .twitter-feed {
@@ -287,7 +289,7 @@ iframe {
   unicode-bidi:bidi-override;
   max-height: 83vh;
   overflow-y: scroll;
-  margin-left: -1px;
+  margin-left: 29px;
 }
 
 .tweet {
@@ -312,10 +314,10 @@ h5 {
 /* GLOBE STYLES*********************************************************************************/
 
 #earth_div {
-  z-index: -1;
+  z-index: 0 !important;
   @include fill-parent();
   position: absolute !important;
-  top: 62px;
+  top: 70px;
   // width: 1440px;
 }
 
