@@ -15,7 +15,7 @@ function stopRotate(){
 
 function initialize() {
     console.log("earth initialized");
-    var options = {atmosphere: true, zooming: false };
+    var options = {atmosphere: false, zooming: false };
         earth = new WE.map('earth_div', options);
         WE.tileLayer('https://s3-us-west-1.amazonaws.com/geomancy/mappy/{z}/{x}/{y}.png').addTo(earth)
 
