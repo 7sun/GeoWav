@@ -70,6 +70,7 @@ GEM
       execjs
     coffee-script-source (1.9.0)
     columnize (0.9.0)
+    daemon_controller (1.2.0)
     debug_inspector (0.0.2)
     debugger-linecache (1.2.0)
     diff-lcs (1.2.5)
@@ -122,6 +123,10 @@ GEM
     naught (1.0.0)
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
+    passenger (4.0.59)
+      daemon_controller (>= 1.2.0)
+      rack
+      rake (>= 0.8.1)
     pg (0.18.1)
     pry (0.10.1)
       coderay (~> 1.1.0)
@@ -245,6 +250,7 @@ DEPENDENCIES
   figaro
   httparty
   jquery-rails
+  passenger
   pg
   pry-rails
   rails (= 4.2.0)

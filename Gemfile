@@ -45,6 +45,8 @@ gem 'angular-ui-bootstrap-rails'
 
 gem 'angular-rails-templates'
 
+gem "passenger"
+
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
