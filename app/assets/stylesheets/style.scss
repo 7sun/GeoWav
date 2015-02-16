@@ -178,8 +178,9 @@ footer {
   list-style: none;
   border: 1px solid #5F5E5E;
   background-color: rgba(50, 49, 47, 0.5);
+  padding-left: 0px;
   li {
-    padding: 15px 20px 15px 0px;
+    padding: 15px 20px;
     margin: 0;
   }
   li:last-child {
