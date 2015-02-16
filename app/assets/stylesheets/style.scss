@@ -3,8 +3,9 @@
 $max-width: 94%;
 
 body {
-  background-color: black;
+  background-color: #1D1D1C;
   color: white;
+  font-family: 'Century Gothic', sans-serif; 
 }
 
 .header {
@@ -12,6 +13,13 @@ body {
   height: 70px;
   margin: 0 auto;
   border-bottom: 1px solid #979797;
+}
+
+footer {
+  width: 94%;
+  height: 70px;
+  margin: 0 3%;
+  border-top: 1px solid #979797;
 }
 
 h1 {
@@ -93,6 +101,18 @@ a:hover {
 
 .outer-container {
   @include outer-container;
+  // min-height: ;
+  margin-bottom: -70px; 
+}
+
+.outer-container:after {
+  content: "";
+  display: block;
+}
+
+footer, .outer-container:after {
+  height: 70px; 
+  margin-top: 50px;
 }
 
 /*SOUNDCLOUD STYLES****************************************************************************/
@@ -105,8 +125,9 @@ a:hover {
   // position: absolute;
   z-index: 2;
   width: 368px;
-  padding: 20px;
-  margin: 20px 0px 0px 23px;
+  padding: 20px 0;
+  height: 141px;
+  // margin: 20px 0px 0px 23px;
 }
 
 #widget {
@@ -118,16 +139,18 @@ a:hover {
   z-index: 2; 
   position: relative;
   left: -50%;
-  background-color: black;
-  border: 1px solid #979797;
+  background-color: #1D1D1C;
+  border: 1px solid #5F5E5E;
   padding: 4px 24px;
 }
 
+#load-playlist:hover {
+  background-color: rgba(114, 113, 111, 0.5);
+}
+
 .controls {
-	padding: 5px;
+	padding: 4px 0 0;
   z-index: 2;
-  top: 220px;
-  clear: left;
 	div {
 		display: inline;
 		padding: 0 26px 0px 0px;
@@ -147,15 +170,18 @@ a:hover {
 	width: 400px;
 	margin: 0;
 	list-style: none;
-	padding: 0px;
+  border: 1px solid #5F5E5E;
+  background-color: rgba(50, 49, 47, 0.5);
 	li {
-    padding: 10px 20px;
-    background-color: #2c3e50;
-    opacity: .96;
-    margin: 16px;
+    padding: 15px 20px;
+    margin: 0;
 	}
+  li:last-child {
+    border-bottom: none;  
+  }
 	li:hover {
-		background-color: #FF5500;
+		// background-color: #FF5500;
+    background-color: rgba(114, 113, 111, 0.5);
 		cursor: pointer;
 	}
 }
@@ -174,8 +200,9 @@ a:hover {
   background-color: rgba(50, 49, 47, 0.5);
   margin-left: 110px;
   padding: 7px;
-  margin-right: -50px;
-  border: 1px solid #979797;
+  margin-right: -32px;
+  border: 1px solid #898585;
+  height: 100px;
 }
 
 .track-num {
@@ -196,6 +223,7 @@ a:hover {
   font-size: 12px;
   font-weight: bold;
   color: #42BFFA;
+  margin: 0;
 }
 
 iframe {

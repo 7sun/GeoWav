@@ -26,7 +26,7 @@
 			console.log("getting tracks!");
 			$http.get('playlist/' + city)
 			.success(function(data){
-				$scope.tracks = data;
+				$scope.tracks = data.slice(0,7);
 			})
 			console.log($scope.tracks);
 		}
