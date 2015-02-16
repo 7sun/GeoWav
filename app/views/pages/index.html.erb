@@ -28,8 +28,10 @@
     <div id="player">
       <img class="artwork" ng-src="{{artworkUrl}}" alt="">
       <div id="player-box">
-        <div class="title">{{currentTrack.title}}</div>
-        <div class="artist">{{currentTrack.user.username}}</div>
+        <div class="track-info">
+          <div class="title">{{currentTrack.title}}</div>
+          <div class="artist">{{currentTrack.user.username}}</div>
+        </div>
         <div class="volume"></div>
         <div class="tracker"></div>
         <div class="controls">
@@ -68,18 +70,19 @@
   <div class="twitter">
     <div class="twitter-feed">
       <ul class="media-list">
-          <li class="media" ng-repeat="tweet in tweets">
+          <li class="media tweet" ng-repeat="tweet in tweets">
             <a class="media-left" href="#" title="#">
               <!-- <img ng-src="{{tweet.user.profile_image_url}}" alt=""> -->
             </a>
             <div class="media-body">
-              <h5 class="media-heading">{{tweet.user.name}}</h5>
-              <h5> <a s-href="http://www.twitter.com/{{tweet.user.screen_name}}" target="_blank">@{{tweet.user.screen_name}}</a></h5>
-              <p>
-                <a href="http://www.twitter.com/{{tweet.user.screen_name}}/status/{{tweet.id}}" target="_blank">
+              <!-- <h5 class="media-heading">{{tweet.user.name}}</h5> -->
+              <p class="tweet-text">
+                <!-- <a href="http://www.twitter.com/{{tweet.user.screen_name}}/status/{{tweet.id}}" target="_blank"> -->
                 {{tweet.text}}
-                 </a>
+                 <!-- </a> -->
               </p>
+              <h5><a href="http://www.twitter.com/{{tweet.user.screen_name}}" target="_blank">@{{tweet.user.screen_name}}</a></h5>
+
             </div>
           </li>
         </ul>

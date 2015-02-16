@@ -11,7 +11,7 @@ body {
 .header {
   width: 94%;
   height: 70px;
-  margin: 0 auto;
+  margin: 0 auto 20px;
   border-bottom: 1px solid #979797;
 }
 
@@ -47,6 +47,7 @@ a {
 }
  
 a:hover {
+  text-decoration: none;
   color: white;
 }
 
@@ -102,6 +103,7 @@ a:hover {
   @include outer-container;
   // min-height: ;
   margin-bottom: -70px; 
+  z-index: -3 !important;
 }
 
 .outer-container:after {
@@ -124,8 +126,7 @@ footer, .outer-container:after {
   // position: absolute;
   z-index: 2;
   width: 368px;
-  padding: 20px 0;
-  height: 141px;
+  height: 120px;
   // margin: 20px 0px 0px 23px;
 }
 
@@ -150,6 +151,7 @@ footer, .outer-container:after {
 .controls {
 	padding: 4px 0 0;
   z-index: 2;
+  text-align: center;
 	div {
 		display: inline;
 		padding: 0 26px 0px 0px;
@@ -179,7 +181,6 @@ footer, .outer-container:after {
     border-bottom: none;  
   }
 	li:hover {
-		// background-color: #FF5500;
     background-color: rgba(114, 113, 111, 0.5);
 		cursor: pointer;
 	}
@@ -202,6 +203,10 @@ footer, .outer-container:after {
   margin-right: -32px;
   border: 1px solid #898585;
   height: 100px;
+}
+
+.track-info {
+  height: 61px;
 }
 
 .track-num {
@@ -253,7 +258,7 @@ iframe {
   z-index: 2;
   font-family: 'Raleway', sans-serif;
   font-weight: 200;
-  margin-top: 34px;
+  margin-top: 7px;
   font-size: 18px;
   text-transform: uppercase;
 }
@@ -266,15 +271,32 @@ iframe {
 }
 
 .twitter-feed {
-  // border-radius: 5px;
-  // padding: 10px 10px 5px 10px;
-  width: 320px;
+  width: 400px;
   margin-bottom: 30px;
   unicode-bidi:bidi-override;
-  max-height: 100vh;
+  max-height: 83vh;
   overflow-y: scroll;
-  // position: absolute;
+  margin-left: -1px;
 }
+
+.tweet {
+  border: 1px solid #898585;
+  padding: 16px;
+  background-color: rgba(50, 49, 47, 0.5);
+}
+
+.tweet-text {
+  font-size: 18px;
+}
+
+h5 {
+  text-align: right;
+  font-weight: bold;
+  a:hover {
+    color: #42BFFA;
+  }
+}
+
 
 /* GLOBE STYLES*********************************************************************************/
 
