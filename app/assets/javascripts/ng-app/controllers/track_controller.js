@@ -12,6 +12,7 @@
 		$scope.getTweets = getTweets;
 		$scope.currentTrackIndex = "";
 		$scope.currentTrack = "";
+		$scope.showTwitterFeed = false;
 
 		var widgetIframe = document.getElementById('sc-widget'),
     widget       = SC.Widget(widgetIframe);
@@ -68,6 +69,7 @@
 
 		function getTweets(artist){
 			console.log("getting tweets!");
+			$scope.showTwitterFeed = true;
 			$http.get('/tweets/' + artist)
 			.success(function(data){
 				$scope.tweets = data;
