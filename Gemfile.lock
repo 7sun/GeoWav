@@ -253,8 +253,8 @@ DEPENDENCIES
   figaro
   httparty
   jquery-rails
-  passenger
   neat
+  passenger
   pg
   pry-rails
   rails (= 4.2.0)
