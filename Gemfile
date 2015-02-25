@@ -41,9 +41,9 @@ gem 'neat'
 
 gem 'angularjs-rails'
 
-gem 'angular-ui-bootstrap-rails'
+# gem 'angular-ui-bootstrap-rails'
 
-gem 'angular-rails-templates'
+# gem 'angular-rails-templates'
 
 gem "passenger"
 
