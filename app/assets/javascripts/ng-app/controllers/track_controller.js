@@ -87,5 +87,5 @@
 
 }
 
-trackController.$inject = ['$scope', '$http'];
+// trackController.$inject = ['$scope', '$http'];
 
