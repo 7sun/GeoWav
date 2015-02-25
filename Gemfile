@@ -29,8 +29,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'twitter'
 
-gem 'pry-rails'
-
 gem 'httparty'
 
 gem 'figaro'
@@ -73,6 +71,8 @@ group :development, :test do
   gem "rspec-rails"
   
   gem "factory_girl_rails"
+
+  gem 'pry-rails'
 
 end
 
