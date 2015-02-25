@@ -18,6 +18,7 @@
 //= require index
 //= require angular
 //= require angular-resource
+//= reqiure angular-ui-router
 //= require angular-ui-bootstrap
 //= require ./ng-app/main
 //= require ./ng-app/controllers/track_controller
