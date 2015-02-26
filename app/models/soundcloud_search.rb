@@ -5,7 +5,7 @@ class SoundcloudSearch < ActiveRecord::Base
   
   def self.add(city)
     if search = SoundcloudSearch.find_by(query: city)
-      if search.updated_at < 10.minutes.ago # Was NOT created within the last 10 minutes
+      if search.updated_at < 30.minutes.ago # Was NOT created within the last 30 minutes
         users = client.get('/users', q: city, limit: 100)
         tracks = getTrack(users, city)
         search.update_attributes(result: users, tracks: tracks, updated_at: Time.now)
