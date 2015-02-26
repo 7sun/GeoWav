@@ -121,7 +121,7 @@ a:hover {
 }
 
 footer {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   color: rgb(139,139,139);
   text-align: center;
@@ -363,4 +363,9 @@ h5 {
 
 .cesium-credit-textContainer {
   visibility: hidden;
+}
+
+#wrapper {
+  min-height: 100%;
+  width: 100%;
 }
