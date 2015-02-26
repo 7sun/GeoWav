@@ -39,7 +39,7 @@ RSpec.describe UsersController, :type => :controller do
 
       it 'redirects to the index view' do 
         post :create, user: valid_attributes
-        expect(response).to redirect_to :twitter
+        expect(response).to redirect_to root_path
       end 
     end 
 
@@ -54,7 +54,7 @@ RSpec.describe UsersController, :type => :controller do
 
       it 'renders the new view file' do
         post :create, user: invalid_attributes
-        expect(response).to render_template :new
+        expect(response).to redirect_to root_path
       end 
     end 
 
