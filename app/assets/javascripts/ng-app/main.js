@@ -19,28 +19,28 @@ angular
 	$scope.show = true;
 	// $scope.showTwitterFeed = false;
 
+// Sets variables for Soundcloud Iframe Player
 	var widgetIframe = document.getElementById('sc-widget'),
   widget       = SC.Widget(widgetIframe);
 
   $(document).on('click', '[data-city-name]', function(e){
   	city = $(e.currentTarget).attr('data-city-name')
-  	console.log(city);
+  	
   	getTracks(city);
   	showPlaylist();
   })
 
-
+// Shows the city playlist
   function showPlaylist() {
   	$('#playlist').removeClass('hidden')
 	}
 
+// Gets tracks to populate playlist
 	function getTracks(city){
-		console.log("getting tracks!");
 		$http.get('playlist/' + city)
 		.success(function(data){
 			$scope.tracks = data.slice(0,7);
 		})
-		console.log($scope.tracks);
 	}
 
 	function loadTrack(index) {
