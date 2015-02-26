@@ -16,6 +16,7 @@ angular
 	$scope.currentTrack = "";
 	$scope.showPlayer = false;
 	$scope.showPlaylist = false;
+	$scope.show = true;
 	// $scope.showTwitterFeed = false;
 
 	var widgetIframe = document.getElementById('sc-widget'),

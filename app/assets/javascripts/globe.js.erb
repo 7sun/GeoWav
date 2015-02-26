@@ -1,22 +1,25 @@
  // Fades in the globe
-
 $(document).ready(function () {
     $('#earth_div').fadeIn(9000).removeClass('hidden');
-});
+    // Hides load playlist button on click
+    $('#load-playlist').click(function(){
+        $(this).addClass('hidden');
+    })
+})
 
 // Animation toggle for globe rotation
-
 var animation = true;
 function stopRotate(){
     animation = false;
 }
 
+// Show animation for City title
 function showCityName(){
     $('#city-container').fadeIn(500).removeClass('hidden');
+    $('#load-playlist').removeClass('hidden');
 }
 
 // Initializes globe display settings, adds city markers, and starts rotation animation 
-
 function initialize() {
     console.log("earth initialized");
     var options = {atmosphere: false, zooming: false };
