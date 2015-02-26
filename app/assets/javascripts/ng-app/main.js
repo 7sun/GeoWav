@@ -25,13 +25,13 @@ angular
 
   $(document).on('click', '[data-city-name]', function(e){
   	city = $(e.currentTarget).attr('data-city-name')
-  	
+
   	getTracks(city);
   	showPlaylist();
   })
 
 // Shows the city playlist
-  function showPlaylist() {
+  function showPlaylist(){
   	$('#playlist').removeClass('hidden')
 	}
 
@@ -43,7 +43,8 @@ angular
 		})
 	}
 
-	function loadTrack(index) {
+// Loads the track that is clicked in the playlist into the music player
+	function loadTrack(index){
 	    $scope.currentTrackIndex = index;
 	    $scope.currentTrack = $scope.tracks[index]
 	    var trackUri = $scope.tracks[index].uri
@@ -52,6 +53,7 @@ angular
 			widget.load(trackUri, { auto_play: true });
 	}
 
+// Loads the next track in the playlist with the next track icon is clicked
 	function nextTrack(){
 		$scope.currentTrack = $scope.tracks[$scope.currentTrackIndex + 1]
 		var trackUri = $scope.tracks[$scope.currentTrackIndex + 1].uri;
@@ -61,7 +63,8 @@ angular
 		// .replace("large", "t300x300");
 	}
 
-	function prevTrack() {
+// Loads the previous track in the playlist with the next track icon is clicked
+	function prevTrack(){
 		$scope.currentTrack = $scope.tracks[$scope.currentTrackIndex - 1]
 		var trackUri = $scope.tracks[$scope.currentTrackIndex - 1].uri;
 		widget.load(trackUri, { auto_play: true });
@@ -70,14 +73,21 @@ angular
 		// .replace("large", "t300x300");
 	}
 
-	function playTrack() {
+	function playTrack(){
 	    widget.play();
 	}
 
-	function pauseTrack() {
+	function pauseTrack(){
 		widget.pause();
 	}
 
+// Plays next track in the playlist once current track finishes
+	widget.bind(SC.Widget.Events.FINISH, function(eventData){
+		console.log("Track finished! Playing next track.");
+		nextTrack();
+   });
+
+// Gets tweets about the artist of the current track that is playing
 	function getTweets(artist){
 		console.log("getting tweets!");
 		// $scope.showTwitterFeed = true;
@@ -85,7 +95,6 @@ angular
 		.success(function(data){
 			$scope.tweets = data;
 		})
-		console.log($scope.tweets);
 	}
 }]);
 
