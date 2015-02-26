@@ -1,12 +1,10 @@
 angular
   .module("GloboApp", ['ngResource'])
-  .config(function($httpProvider) {
+  .config(['$httpProvider', function($httpProvider) {
     $httpProvider.defaults.headers.common['X-CSRF-Token'] =
       $('meta[name=csrf-token]').attr('content');
-  })
-  .controller("trackController", trackController);
-
-function trackController($scope, $http, $resource){
+  }])
+  .controller("trackController", ['$scope', '$http', '$resource', function($scope, $http, $resource){
 	$scope.getTracks = getTracks;
 	$scope.loadTrack = loadTrack;
 	$scope.nextTrack = nextTrack;
@@ -88,5 +86,5 @@ function trackController($scope, $http, $resource){
 		})
 		console.log($scope.tweets);
 	}
-}
+}]);
 
