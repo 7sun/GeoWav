@@ -68,13 +68,25 @@ a:hover {
   font-weight: 300;
 }
 
+.form-group > input {
+  background-color: #1D1D1C;
+  color: white;
+}
+
+.modal-content {
+  background-color: #1D1D1C;
+  border: 1px solid #979797;
+}
+
 .modal-header {
   font-family: 'Francois One', sans-serif;
   font-size: 36px;
+  color: white;
 }
 
 .btn-primary:hover {
   background-color: #FF5500;
+  color: white;
 }
 
 .btn {
@@ -83,18 +95,21 @@ a:hover {
   border: none;
 }
 
-.x {
-  color: black;
+.btn:hover {
+  color: #FF5500;
 }
 
-.x:hover {
-  background-color: none;
-  color: #FF5500;
+#login-button:hover {
+  color: white;
+}
+
+#signup-button:hover {
+  color: white;
 }
 
 .flash-messages {
   text-align: center;
-  width: 40%;
+  position: relative;
   margin: auto;
   font-family: 'Raleway', sans-serif;
   font-weight: 300;

@@ -63,7 +63,23 @@
         <button id="load-playlist" ng-click="showPlaylist=true">Load Playlist</button>
       </div>
     </div>
+
+    <!-- VALIDATION FLASH MESSAGES -->
+    <div class="flash-messages">
+      <div class="fade-flash-messages">
+        <% flash.each do |key, value| %>
+
+        <div class="alert alert-<%= key %>" role="alert">
+          <%= value %><br>
+        </div>
+
+        <% end %>
+      </div>
+    </div>
+
   </div>
+
+
 
 
 <!-- TWITTER FEED BEGINS HERE -->
@@ -99,19 +115,7 @@
 <!-- Search by city: <input type='text' ng-model='s.name'> -->
 
 
-<!-- VALIDATION FLASH MESSAGES -->
 
-<div class="flash-messages">
-  <div class="fade-flash-messages">
-    <% flash.each do |key, value| %>
-
-    <div class="alert alert-<%= key %>" role="alert">
-      <%= value %><br>
-    </div>
-
-    <% end %>
-  </div>
-</div>
 
 
 <!-- LOGIN MODAL BEGINS HERE (part of header) -->
@@ -120,7 +124,6 @@
     <div class="modal-dialog">
        <div class="modal-content">
          <div class="modal-header">
-          <button type="button" class="close x" data-dismiss="modal" aria-hidden="true">×</button>
           <h4 class="modal-title x">Login</h4>
         </div>
         <div class="modal-body">
@@ -137,7 +140,7 @@
         </div>
         <div class="modal-footer">
           <a href="#" data-dismiss="modal" class="btn x">Close</a>
-          <%= f.submit "Login!", class: "btn btn-primary" %>
+          <%= f.submit "Login!", class: "btn btn-primary", id: 'login-button' %>
         </div>
         <% end %>
        </div>
@@ -151,7 +154,6 @@
     <div class="modal-dialog">
        <div class="modal-content">
          <div class="modal-header">
-          <button type="button" class="close x" data-dismiss="modal" aria-hidden="true">×</button>
           <h4 class="modal-title x">Signup</h4>
         </div>
         <div class="modal-body">
@@ -180,7 +182,7 @@
         </div>
         <div class="modal-footer">
           <a href="#" data-dismiss="modal" class="btn x">Close</a>
-          <%= f.submit "Signup!", class: "btn btn-primary" %>
+          <%= f.submit "Signup!", class: "btn btn-primary", id: 'signup-button' %>
         </div>
         <% end %>
        </div>
