@@ -23,7 +23,7 @@ These results are stored in our database to speed up subsequent requests and the
 
 When an track is selected from the playlist, the audio will begin playing and a request will be made to the Twitter API to find the most recent tweets made that include a hashtag of the artist. This list is presented on the right side column.
 
-Tweets are also stored in the database to speed up performance and the Twitter API is only called after a spe
+Tweets are also stored in the database to speed up performance and the Twitter API is only called after a specific time interval.
 
 
 
