@@ -1,5 +1,5 @@
 class SoundcloudController < ApplicationController
-
+  # builds a dynamic playlist based on the selected city and renders JSON
   def playlist
     city = params[:city]
     @search = SoundcloudSearch.add(city)
